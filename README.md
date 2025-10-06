@@ -25,7 +25,7 @@ www.linkedin.com/in/elan-wilson-709942302
 
 ---
 ## Certifications
-*   CompTIA Security+ (SY0-701) - [Verification Link if you have one]
+*   CompTIA Security+ (SY0-701) - https://drive.google.com/file/d/1bB5BiVQ0ym6xiX7TzGK5tsoOVulkt0hU/view?usp=sharing
 
 ## Skills
 *   **Tools:** Wireshark, Nessus, VMware/VirtualBox, Linux CLI
