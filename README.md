@@ -16,7 +16,7 @@ www.linkedin.com/in/elan-wilson-709942302
 ### [Project 2: Vulnerability Assessment with Nessus]
 *   **Description:** Performed a vulnerability scan against a Metasploitable2 VM, identified critical flaws, and authored a remediation report.
 *   **Skills:** Nessus, Vulnerability Management, Risk Assessment, Report Writing
-*   **Link:** https://drive.google.com/file/d/15E6F8t_ay2HEeoSP7GnjD8HYEzMtiU8Z/view?usp=sharing
+*   **Link:** https://drive.google.com/file/d/12c3b4u4cF2Wr87DqIQEPymmgAnBKInzx/view?usp=sharing
 
 ### [Project 3: Custom Python Port Scanner]
 *   **Description:** Built a Python script to perform TCP port scanning, improving my understanding of network enumeration and automation.
