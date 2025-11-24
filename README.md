@@ -11,7 +11,7 @@ www.linkedin.com/in/elan-wilson-709942302
 ### [Project 1: Understanding And Network Monitoring With Wireshark]
 *   **Description:** Analyzed a pcap file from a simulated breach to identify malicious traffic and C2 communication.
 *   **Skills:** Wireshark, Protocol Analysis, Threat Hunting
-*   **Link:** [Link to the project folder in your GitHub]
+*   **Link:** https://drive.google.com/drive/folders/1UR2-IlzWthlRS9aqxHIPRy6bn4jZO2Ij?usp=sharing
 
 ### [Project 2: Vulnerability Assessment with Nessus]
 *   **Description:** Performed a vulnerability scan against a Metasploitable2 VM, identified critical flaws, and authored a remediation report.
