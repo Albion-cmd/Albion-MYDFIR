@@ -8,7 +8,7 @@ www.linkedin.com/in/elan-wilson-709942302
 
 ## Projects
 
-### [Project 1: Analyzing HTTP Traffic with Wireshark]
+### [Project 1: Understanding And Network Monitoring With Wireshark]
 *   **Description:** Analyzed a pcap file from a simulated breach to identify malicious traffic and C2 communication.
 *   **Skills:** Wireshark, Protocol Analysis, Threat Hunting
 *   **Link:** [Link to the project folder in your GitHub]
