@@ -1,4 +1,10 @@
 # Wilson Elan Oluwasemiloore | Cybersecurity Enthusiast
+** Early-career Information Security Analyst with a strong foundation in Governance, Risk & Compliance (GRC),
+cybersecurity fundamentals, and penetration testing concepts. Hands-on experience supporting security awareness,
+secure operations, and risk-based thinking aligned with ISO/IEC 27001, PCI-DSS, and client security requirements.
+Technically proficient in network security, API security testing, log analysis, and Linux environments, with proven ability
+to translate security and compliance requirements to non-technical stakeholders. Passionate about strengthening
+organizational security posture through a blend of policy, process, and technical control validation.
 
 **Security+ Certified | Focused on Practical Defense & Threat Analysis**
 
@@ -32,5 +38,12 @@ www.linkedin.com/in/elan-wilson-709942302
 *   **Concepts:** Network Defense, Vulnerability Management,Vulnerability Scanning, PKI, Risk Mitigation, SIEM Basics
 *   **Programming/Scripting:** Python (Basic)
 *   **Metasploit Framework
+*   **Authentication & authorization testing (BOLA, BFLA)
+*   **OWASP API Top 10 vulnerabilities
+*   **Input validation, injection & rate-limit testing
+*   **API security testing (Postman, curl)
+*   **Penetration testing methodology (recon → exploit → report)
+*   **SO/IEC 27001 & PCI-DSS awareness
+*   **Information Security ManagementSystem (ISMS) Concepts, Risk identification
+*   **Security policies, standards & procedures
 *   **
-
