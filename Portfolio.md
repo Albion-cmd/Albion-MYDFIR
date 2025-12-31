@@ -25,9 +25,10 @@ www.linkedin.com/in/elan-wilson-709942302
 *   **Link:** https://drive.google.com/file/d/12c3b4u4cF2Wr87DqIQEPymmgAnBKInzx/view?usp=sharing
 
 ### [Project 3: Custom Python Port Scanner]
-*   **Description:** Built a Python script to perform TCP port scanning, improving my understanding of network enumeration and automation.
-*   **Skills:** Python, Socket Programming, Automation
-*   **Link:** [Link to the script]
+*   **Description:** Developed a custom multi-threaded network scanner in Python to identify active services and potential entry points on target hosts. Unlike linear scanners, this tool utilizes concurrent execution to probe 1,024 ports in under 10 seconds. It serves as a lightweight alternative to Nmap for rapid environment fingerprinting and custom reconnaissance tasks.
+*   **Skills:** Network Protocol Analysis: Deep understanding of the TCP/IP stack and the Three-Way Handshake (SYN, SYN-ACK, ACK).Python Programming: Mastery of socket programming, concurrency (threading), and command-line argument parsing (sys.argv).
+Reconnaissance Methodology: Practical experience in active footprinting and identifying attack surfaces.
+*   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh
 
 ### [Project 3: Hardener Script & Suite-Setter For Kali]
 *   **Description:** ngineered a comprehensive automation suite to transform a default Kali Linux installation into a hardened, production-ready workstation. The solution automates the implementation of "Least Privilege" principles, network isolation via firewall orchestration, and OPSEC-focused privacy controls (MAC spoofing). By reducing manual setup time from 45 minutes to 5 minutes, this project demonstrates a commitment to DevSecOps principles and efficient security operations.
