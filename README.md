@@ -1,5 +1,5 @@
 # Wilson Elan Oluwasemiloore | Cybersecurity Enthusiast
-** Early-career Information Security Analyst with a strong foundation in Governance, Risk & Compliance (GRC),
+**Early-career Information Security Analyst with a strong foundation in Governance, Risk & Compliance (GRC),
 cybersecurity fundamentals, and penetration testing concepts. Hands-on experience supporting security awareness,
 secure operations, and risk-based thinking aligned with ISO/IEC 27001, PCI-DSS, and client security requirements.
 Technically proficient in network security, API security testing, log analysis, and Linux environments, with proven ability
