@@ -38,7 +38,18 @@ Security Ops: OS Hardening, OPSEC (Operations Security), Automation & Scripting,
 
 ---
 ## Certifications
-*   CompTIA Security+ (SY0-701) - https://drive.google.com/file/d/1bB5BiVQ0ym6xiX7TzGK5tsoOVulkt0hU/view?usp=sharing
+*  Advent In Cyber 2025 cert
+*  API penetration Testing
+*  API Security Fundamental
+*  API Security in the World of DevSecOps cert
+*  APIsec Power User
+*  Certified Cybersecurity Educator Professional (CCEP)
+*  Comptia Sec + syo 701
+*  Certificate Of Completion Cyber Security GomyCode
+*  MCP Security Fundamentals
+*  OWASP API Security Top 10 cert
+*  
+https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing
 
 ## Skills
 *   **Tools:** Wireshark, Nessus, VMware/VirtualBox, Linux CLI
