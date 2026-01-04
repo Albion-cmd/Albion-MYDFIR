@@ -37,18 +37,18 @@ Security Ops: OS Hardening, OPSEC (Operations Security), Automation & Scripting,
 *   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh
 
 ### [Project 5: Advanced Nmap Firewall Evasion & Traffic Analysis].
-*    **Description: Conducted a multi-stage security research project to bypass firewall filters and IDS/IPS systems using advanced Nmap flags. Validated evasion efficacy by performing deep packet analysis in Wireshark, focusing on identity masking, packet fragmentation, and raw Ethernet frame injection.
-*    **Skills: Network Security, Nmap, Wireshark, TCP/IP Protocol Analysis, Firewall Evasion Techniques.
-*    **Link: https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW?usp=sharing
+*    **Description:** Conducted a multi-stage security research project to bypass firewall filters and IDS/IPS systems using advanced Nmap flags. Validated evasion efficacy by performing deep packet analysis in Wireshark, focusing on identity masking, packet fragmentation, and raw Ethernet frame injection.
+*    **Skills:** Network Security, Nmap, Wireshark, TCP/IP Protocol Analysis, Firewall Evasion Techniques.
+*    **Link:** https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW?usp=sharing
 
-###  Project 5: Password Security & Hash Recovery Analysis
-*  **Description: Conducted a hands-on technical lab in a controlled Kali Linux environment focused on the vulnerabilities of legacy encryption and weak password policies. The project involved extracting hash material from a password-protected ZIP archive and performing an offline dictionary attack to recover credentials. This research highlighted the critical gap between legacy encryption (ZipCrypto) and modern security standards.
-*   **Key Technical Tasks:
+###  [Project 6: Password Security & Hash Recovery Analysis]
+*    **Description:** Conducted a hands-on technical lab in a controlled Kali Linux environment focused on the vulnerabilities of legacy encryption and weak password policies. The project involved extracting hash material from a password-protected ZIP archive and performing an offline dictionary attack to recover credentials. This research highlighted the critical gap between legacy encryption (ZipCrypto) and modern security standards.
+*    **Key Technical Tasks:**
 Hash Extraction: Utilized specialized tools to extract credential hash material from protected archives for offline analysis.
 Encryption Identification: Identified and analyzed legacy ZipCrypto encryption to determine the most effective attack vector.
 Advanced Recovery: Successfully recovered a weak password using John the Ripper, resolving wordlist compatibility and format issues during the process.
 Security Validation: Demonstrated the efficacy of offline dictionary attacks against weak password policies and outdated encryption standards.Skills: Cybersecurity, Kali Linux, John the Ripper, Password Cracking, Hash Analysis, Encryption Standards (ZipCrypto vs. AES), Defense-in-Depth.
-*   **Link: https://drive.google.com/drive/folders/1YK9itfcQyA1n0WOqtnM-IRA-aZJ_pyV_?usp=sharing
+*    **Link:** https://drive.google.com/drive/folders/1YK9itfcQyA1n0WOqtnM-IRA-aZJ_pyV_?usp=sharing
 
 
 ---
