@@ -36,6 +36,10 @@ Reconnaissance Methodology: Practical experience in active footprinting and iden
 Security Ops: OS Hardening, OPSEC (Operations Security), Automation & Scripting, Linux System Administration.
 *   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh
 
+### [Project 5: Advanced Nmap Firewall Evasion & Traffic Analysis].
+*    **Description: Conducted a multi-stage security research project to bypass firewall filters and IDS/IPS systems using advanced Nmap flags. Validated evasion efficacy by performing deep packet analysis in Wireshark, focusing on identity masking, packet fragmentation, and raw Ethernet frame injection.
+*    **Skills: Network Security, Nmap, Wireshark, TCP/IP Protocol Analysis, Firewall Evasion Techniques.
+*    **Link: https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW?usp=sharing
 ---
 ## Certifications
 *  Advent In Cyber 2025 cert
