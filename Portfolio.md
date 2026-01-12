@@ -50,6 +50,27 @@ Advanced Recovery: Successfully recovered a weak password using John the Ripper,
 Security Validation: Demonstrated the efficacy of offline dictionary attacks against weak password policies and outdated encryption standards.Skills: Cybersecurity, Kali Linux, John the Ripper, Password Cracking, Hash Analysis, Encryption Standards (ZipCrypto vs. AES), Defense-in-Depth.
 *    **Link:** https://drive.google.com/drive/folders/1YK9itfcQyA1n0WOqtnM-IRA-aZJ_pyV_?usp=sharing
 
+###  [Project 7: Web Application Penetration Testing Series (In View)]
+*    **Description:**
+Conducted multiple hands-on web application penetration testing projects within controlled lab environments to identify, exploit, and document common and advanced web vulnerabilities. These engagements followed structured penetration testing methodologies, emphasizing manual testing techniques over automated tooling. The projects focused on understanding real-world attack paths, validating security controls, and translating technical findings into actionable remediation guidance aligned with organizational risk.
+*    **Key Technical Tasks:**
+* Reconnaissance & Attack Surface Mapping:
+Performed manual and automated reconnaissance to enumerate endpoints, parameters, hidden content, and API routes using browser-based testing, Burp Suite, OWASP ZAP, and custom tooling.
+* Input Validation & Injection Testing:
+Identified and exploited input validation weaknesses including reflected and stored XSS, SQL injection patterns, command injection vectors, and insecure parameter handling.
+* Authentication & Authorization Testing:
+Tested login mechanisms, session management, and access controls, including broken object level authorization (BOLA), broken function level authorization (BFLA), and privilege escalation scenarios.
+* Client-Side & Server-Side Security Analysis:
+Analyzed client-side JavaScript behavior and server-side request handling to uncover trust boundary violations, insecure logic, and hidden functionality not exposed through the UI.
+* Manual Exploitation & Proof of Concept Development:
+Developed manual payloads and proofs of concept to validate vulnerabilities beyond automated scanner findings, ensuring accurate risk assessment and reducing false positives.
+* Vulnerability Validation & Impact Assessment:
+Confirmed exploitability of findings and evaluated technical and business impact, considering data exposure, account compromise, and downstream attack potential.
+* Reporting & Remediation Guidance:
+Produced structured penetration testing reports detailing findings, attack methodology, evidence, and prioritized remediation steps aligned with OWASP Top 10 and secure development best practices.
+*    **Skills Demonstrated:**
+Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Suite, OWASP ZAP, Manual Exploitation Techniques, Authentication & Authorization Testing, XSS & Injection Attacks, Risk Assessment, Technical Reporting, Secure Design Awareness.
+*    **Link:** https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link
 
 ---
 ## Certifications
