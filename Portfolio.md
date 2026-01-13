@@ -84,7 +84,10 @@ Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Su
 *  Certificate Of Completion Cyber Security GomyCode
 *  MCP Security Fundamentals
 *  OWASP API Security Top 10 cert
-*  
+*  Building Security into AI
+*  API Security for PCI Compliance
+*  API Documentation Best Practices
+  
 https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing
 
 ## Skills
