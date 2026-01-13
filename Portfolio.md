@@ -87,6 +87,8 @@ Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Su
 *  Building Security into AI
 *  API Security for PCI Compliance
 *  API Documentation Best Practices
+*  Securing API Servers
+*  API SecDevOps
   
 https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing
 
