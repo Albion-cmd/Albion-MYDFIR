@@ -90,6 +90,8 @@ Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Su
 *  Securing API Servers
 *  API SecDevOps
 *  API Authentication Cert
+*  Securing LLM and NLP APIs
+*  Getting Started in API Pen-Testing
   
 https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing
 
