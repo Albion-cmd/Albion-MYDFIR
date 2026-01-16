@@ -31,7 +31,7 @@ Reconnaissance Methodology: Practical experience in active footprinting and iden
 *   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh
 
 ### [Project 4: Hardener Script & Suite-Setter For Kali]
-*   **Description:** ngineered a comprehensive automation suite to transform a default Kali Linux installation into a hardened, production-ready workstation. The solution automates the implementation of "Least Privilege" principles, network isolation via firewall orchestration, and OPSEC-focused privacy controls (MAC spoofing). By reducing manual setup time from 45 minutes to 5 minutes, this project demonstrates a commitment to DevSecOps principles and efficient security operations.
+*   **Description:** Engineered a comprehensive automation suite to transform a default Kali Linux installation into a hardened, production-ready workstation. The solution automates the implementation of "Least Privilege" principles, network isolation via firewall orchestration, and OPSEC-focused privacy controls (MAC spoofing). By reducing manual setup time from 45 minutes to 5 minutes, this project demonstrates a commitment to DevSecOps principles and efficient security operations.
 *   **Skills:** Bash Scripting, Python 3. TCP/IP Networking, Firewall Management (UFW/Iptables), Socket Programming.
 Security Ops: OS Hardening, OPSEC (Operations Security), Automation & Scripting, Linux System Administration.
 *   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh
