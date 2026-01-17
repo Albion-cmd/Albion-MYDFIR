@@ -1,12 +1,9 @@
 # Wilson Elan Oluwasemiloore | Cybersecurity Enthusiast
-Early-career Information Security Analyst with a strong foundation in Governance, Risk & Compliance (GRC),
-cybersecurity fundamentals, and penetration testing concepts. Hands-on experience supporting security awareness,
-secure operations, and risk-based thinking aligned with ISO/IEC 27001, PCI-DSS, and client security requirements.
-Technically proficient in network security, API security testing, log analysis, and Linux environments, with proven ability
-to translate security and compliance requirements to non-technical stakeholders. Passionate about strengthening
-organizational security posture through a blend of policy, process, and technical control validation.
+Early-career Information Security Analyst with hands-on exposure across Governance, Risk & Compliance (GRC), security operations, and penetration testing fundamentals. Demonstrated ability to assess technical risk through vulnerability assessment, web and API security testing, network analysis, and Linux system auditing, while aligning findings with organizational risk and compliance objectives.
+Experienced in supporting security monitoring, incident response, and security awareness initiatives, with a strong understanding of ISO/IEC 27001, PCI-DSS, and audit-driven control validation. Technically proficient in network security, API security testing, log analysis, and security tooling (Burp Suite, Nmap, Wireshark), with the ability to document findings clearly and translate technical issues into business-relevant risk for non-technical stakeholders.
+Brings a risk-aware, methodical mindset that bridges policy, process, and technical controls, enabling practical security improvements rather than checkbox compliance. Motivated by continuous hands-on learning and real-world impact, with a focus on strengthening organizational security posture through measurable, risk-based decision-making.
 
-**Security+ Certified | Focused on Practical Defense & Threat Analysis**
+**CompTIA Security+ Certified | Security Operations, Threat Analysis & Risk-Based Defense**
 
 www.linkedin.com/in/elan-wilson-709942302
 
@@ -98,15 +95,15 @@ Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Su
 https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing
 
 ## Skills
-*   **Tools:** Wireshark, Nessus, VMware/VirtualBox, Linux CLI
-*   **Concepts:** Network Defense, Vulnerability Management,Vulnerability Scanning, PKI, Risk Mitigation, SIEM Basics
-*   **Programming/Scripting:** Python (Basic)
-*   **Metasploit Framework
-*   **Authentication & authorization testing (BOLA, BFLA)
-*   **OWASP API Top 10 vulnerabilities
-*   **Input validation, injection & rate-limit testing
-*   **API security testing (Postman, curl)
-*   **Penetration testing methodology (recon → exploit → report)
-*   **SO/IEC 27001 & PCI-DSS awareness
-*   **Information Security ManagementSystem (ISMS) Concepts, Risk identification
-*   **Security policies, standards & procedures
+*   **Tools:** Wireshark, Nessus, Burp Suite, Nmap, Metasploit Framework, VMware/VirtualBox, Linux CLI
+*   **Concepts:** Network Defense, Vulnerability Management, Vulnerability Scanning, Threats & Attack Vectors, PKI, Risk Mitigation, SIEM Fundamentals, Incident Response Concepts
+*   **Programming / Scripting:** Python (Basic), Bash (Security Automation)
+*   **Web & API Security Testing:** Authentication & Authorization Testing (BOLA, BFLA), Input Validation, Injection Attacks, Rate-Limit Testing
+*   **Standards & Frameworks:** OWASP API Top 10, OWASP Testing Methodology
+*   **API Security:** API Security Testing (Postman, curl), API Authentication Mechanisms, Secure API Design Awareness
+*   **Penetration Testing:** Penetration Testing Methodology (Reconnaissance → Exploitation → Reporting), Attack Surface Mapping, Manual Testing Techniques
+*   **Operating Systems:** Linux Security Fundamentals, System Hardening, Permission & User Auditing
+*   **Governance, Risk & Compliance (GRC):** ISO/IEC 27001 & PCI-DSS Awareness, Information Security Management System (ISMS) Concepts, Risk Identification & Assessment
+*   **Security Operations:** Log Analysis, Alert Triage, Security Monitoring Concepts
+*   **Professional Practices:** Security Documentation & Reporting, Security Policies, Standards & Procedures, Translating Technical Risk to Business Impact
+
