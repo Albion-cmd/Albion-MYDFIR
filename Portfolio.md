@@ -91,6 +91,8 @@ Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Su
 *  Getting Started in API Pen-Testing
 *  API Gateway Security Best Practices
 *  API Product Management Masterclass
+*  Certified Threat Intelligence & Governance Analyst (CTIGA)
+*  Certified Red Team Operations Management (CRTOM)
   
 https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing
 
