@@ -132,15 +132,59 @@ Due to time efficiency and readability, individual challenge artifacts, notes, a
 https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing
 
 ## Skills
-*   **Tools:** Wireshark, Nessus, Burp Suite, Nmap, Metasploit Framework, VMware/VirtualBox, Linux CLI
-*   **Concepts:** Network Defense, Vulnerability Management, Vulnerability Scanning, Threats & Attack Vectors, PKI, Risk Mitigation, SIEM Fundamentals, Incident Response Concepts
-*   **Programming / Scripting:** Python (Basic), Bash (Security Automation)
-*   **Web & API Security Testing:** Authentication & Authorization Testing (BOLA, BFLA), Input Validation, Injection Attacks, Rate-Limit Testing
-*   **Standards & Frameworks:** OWASP API Top 10, OWASP Testing Methodology
-*   **API Security:** API Security Testing (Postman, curl), API Authentication Mechanisms, Secure API Design Awareness
-*   **Penetration Testing:** Penetration Testing Methodology (Reconnaissance → Exploitation → Reporting), Attack Surface Mapping, Manual Testing Techniques
-*   **Operating Systems:** Linux Security Fundamentals, System Hardening, Permission & User Auditing
-*   **Governance, Risk & Compliance (GRC):** ISO/IEC 27001 & PCI-DSS Awareness, Information Security Management System (ISMS) Concepts, Risk Identification & Assessment
-*   **Security Operations:** Log Analysis, Alert Triage, Security Monitoring Concepts
-*   **Professional Practices:** Security Documentation & Reporting, Security Policies, Standards & Procedures, Translating Technical Risk to Business Impact
 
+### Security Operations & Investigation
+* Log analysis, alert triage, and security monitoring concepts  
+* Email security & forensics: header analysis, artifact validation, and phishing investigation  
+* File signature and metadata analysis for integrity and anomaly detection  
+* Encoding and decoding techniques (e.g., Base64) for artifact examination  
+* Structured investigative thinking and evidence-based analysis  
+
+### Network & Traffic Analysis
+* Network defense fundamentals and traffic inspection  
+* Packet capture (pcap) analysis using Wireshark  
+* Identification of malicious patterns, C2 indicators, and protocol abuse  
+* TCP/IP, DNS, and common service port analysis  
+
+### Penetration Testing & Offensive Security
+* Penetration testing methodology (Reconnaissance → Exploitation → Reporting)  
+* Attack surface mapping and manual testing techniques  
+* Web & API security testing:
+  * Authentication & authorization flaws (BOLA, BFLA)
+  * Input validation failures and injection attacks
+  * Rate-limit and logic testing  
+* Advanced network scanning and firewall evasion research  
+
+### API & Application Security
+* API security testing using Postman and curl  
+* API authentication mechanisms and secure API design awareness  
+* OWASP API Top 10 and OWASP Testing Methodology alignment  
+
+### Vulnerability & Risk Management
+* Vulnerability scanning and assessment using Nessus  
+* Identification of threats, attack vectors, and risk exposure  
+* Risk mitigation concepts and defense-in-depth awareness  
+
+### Operating Systems & Platform Security
+* Linux security fundamentals and system hardening  
+* User, permission, and access auditing  
+* Security-focused automation and system configuration  
+
+### Tools & Technologies
+* Wireshark, Nessus, Burp Suite, Nmap, Metasploit Framework  
+* Linux CLI, VMware / VirtualBox  
+
+### Programming & Automation
+* Python (basic scripting for security tasks)  
+* Bash scripting for security automation and system hardening  
+
+### Governance, Risk & Compliance (GRC)
+* ISO/IEC 27001 and PCI-DSS awareness  
+* Information Security Management System (ISMS) concepts  
+* Risk identification, assessment, and control validation  
+
+### Professional Practices
+* Security documentation and technical reporting  
+* Incident documentation and evidence handling  
+* Translating technical findings into business-relevant risk  
+* Security policies, standards, and procedural awareness  
