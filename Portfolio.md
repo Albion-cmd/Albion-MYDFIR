@@ -47,7 +47,7 @@ Advanced Recovery: Successfully recovered a weak password using John the Ripper,
 Security Validation: Demonstrated the efficacy of offline dictionary attacks against weak password policies and outdated encryption standards.Skills: Cybersecurity, Kali Linux, John the Ripper, Password Cracking, Hash Analysis, Encryption Standards (ZipCrypto vs. AES), Defense-in-Depth.
 *    **Link:** https://drive.google.com/drive/folders/1YK9itfcQyA1n0WOqtnM-IRA-aZJ_pyV_?usp=sharing
 
-###  [Project 7: Web Application Penetration Testing Series (In View)]
+###  [Project 7: Web Application Penetration Testing Series]
 *    **Description:**
 Conducted multiple hands-on web application penetration testing projects within controlled lab environments to identify, exploit, and document common and advanced web vulnerabilities. These engagements followed structured penetration testing methodologies, emphasizing manual testing techniques over automated tooling. The projects focused on understanding real-world attack paths, validating security controls, and translating technical findings into actionable remediation guidance aligned with organizational risk.
 *    **Key Technical Tasks:**
@@ -68,6 +68,41 @@ Produced structured penetration testing reports detailing findings, attack metho
 *    **Skills Demonstrated:**
 Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Suite, OWASP ZAP, Manual Exploitation Techniques, Authentication & Authorization Testing, XSS & Injection Attacks, Risk Assessment, Technical Reporting, Secure Design Awareness.
 *    **Link:** https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link
+
+
+---
+
+## CTFs & Online Security Labs (Active Work)
+
+I actively participate in Capture The Flag (CTF) challenges and structured online labs to strengthen hands-on security skills across blue team, offensive security, and threat analysis domains. These labs are approached methodically, with emphasis on understanding attack paths, validating findings, and documenting lessons learned rather than tool-driven guessing.
+
+### Platforms & Focus Areas
+* **Blue Team Labs Online (BTLO)** – Defensive security labs focused on:
+  * Log analysis & SIEM-style investigation
+  * Network traffic analysis
+  * Incident detection & triage
+  * Threat identification and reporting
+  * Email forensics
+  * File signature & metadata analysis
+  * Encoding/decoding (Base64)
+  * Artifact validation
+  * Structured investigation thinking
+
+### Skills Practiced
+* Log interpretation & alert investigation  
+* Network traffic inspection (pcap analysis)  
+* Detection of malicious behavior & attack indicators  
+* Mapping technical findings to incident impact  
+* Documentation of investigative methodology  
+
+### Evidence & Writeups
+Due to time efficiency and readability, individual challenge artifacts, notes, and writeups are maintained externally and updated continuously.
+
+* **CTF & Lab Evidence Repository:**
+  
+
+---
+
 
 ---
 ## Certifications
