@@ -69,8 +69,43 @@ Produced structured penetration testing reports detailing findings, attack metho
 Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Suite, OWASP ZAP, Manual Exploitation Techniques, Authentication & Authorization Testing, XSS & Injection Attacks, Risk Assessment, Technical Reporting, Secure Design Awareness.
 *    **Link:** https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link
 
+###   [Project 8: ELK Stack Deployment & SIEM Engineering Lab]
 
----
+*    **Description:**
+Designed, deployed, and validated a fully functional Elastic Stack (Elasticsearch, Kibana, Fleet Server, and Elastic Agent) to build a centralized SIEM and observability lab in a Linux-based virtualized environment.
+The project focused on understanding how security telemetry is collected, transported, indexed, and analyzed in real-world SOC environments. Emphasis was placed on secure configuration, agent lifecycle management, data ingestion validation, and operational troubleshooting rather than one-click setups.
+
+Key Technical Tasks:
+* Elastic Stack Architecture & Secure Deployment:
+Deployed Elasticsearch and Kibana on an Ubuntu server with built-in security enabled, configuring single-node discovery for lab use while maintaining production-aligned security defaults (TLS, authentication, enrollment tokens).
+* Fleet Server Configuration & Agent Management:
+Provisioned and configured Fleet Server to centrally manage Elastic Agents, enabling policy-based control of data collection and enforcing consistent telemetry ingestion across hosts.
+* Elastic Agent Installation & Enrollment:
+Installed Elastic Agent with elevated privileges to ensure full system visibility and enrolled the agent into Fleet using service tokens and trusted CA fingerprints, simulating enterprise endpoint onboarding workflows.
+* System Telemetry & Log Ingestion:
+Enabled the System integration to collect host-level telemetry including:
+Authentication logs
+Syslog events
+CPU, memory, disk, and process metrics
+* Host and agent metadata
+Validated ingestion into logs-* and metrics-* data streams.
+* Data View Creation & Validation:
+Created and configured Kibana data views (logs-*, metrics-*) and validated live ingestion through Discover, confirming correct timestamping, field mapping, and ECS alignment.
+* Operational Troubleshooting & Debugging:
+Resolved real-world deployment issues including:
+* Fleet Server HTTPS enforcement
+* Certificate trust and fingerprint validation
+* Enrollment and agent bootstrap timing issues
+* Kibana access and browser-related session constraints
+* SIEM Readiness & SOC Use-Case Preparation:
+Prepared the environment for future detection engineering, alerting, and investigation workflows by ensuring reliable data flow, normalized fields, and consistent host context.
+
+*    **Skills Demonstrated:**
+SIEM Architecture, Elastic Stack (ELK), Elasticsearch, Kibana, Fleet Server, Elastic Agent, Linux System Administration, Log & Metrics Pipelines, Security Telemetry Collection, TLS & Certificate Management, SOC Tooling Fundamentals, Troubleshooting Distributed Systems, Observability & Detection Readiness.
+
+*    **Link:**
+  https://drive.google.com/drive/folders/1RgRNgjQCI1qw9XckSWuRGwfHhX2-8xd3?usp=sharing
+   --
 
 ## CTFs & Online Security Labs (Active Work)
 
