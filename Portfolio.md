@@ -1,7 +1,5 @@
-# Wilson Elan Oluwasemiloore | Cybersecurity Enthusiast
-Early-career Information Security Analyst with hands-on exposure across Governance, Risk & Compliance (GRC), security operations, and penetration testing fundamentals. Demonstrated ability to assess technical risk through vulnerability assessment, web and API security testing, network analysis, and Linux system auditing, while aligning findings with organizational risk and compliance objectives.
-Experienced in supporting security monitoring, incident response, and security awareness initiatives, with a strong understanding of ISO/IEC 27001, PCI-DSS, and audit-driven control validation. Technically proficient in network security, API security testing, log analysis, and security tooling (Burp Suite, Nmap, Wireshark), with the ability to document findings clearly and translate technical issues into business-relevant risk for non-technical stakeholders.
-Brings a risk-aware, methodical mindset that bridges policy, process, and technical controls, enabling practical security improvements rather than checkbox compliance. Motivated by continuous hands-on learning and real-world impact, with a focus on strengthening organizational security posture through measurable, risk-based decision-making.
+# Wilson Elan Oluwasemiloore | Cybersecurity Analyst
+Security+ certified analyst with hands-on experience in penetration testing, vulnerability assessment, and SIEM operations. Skilled at identifying security gaps through manual testing and translating technical findings into risk-prioritized remediation guidance. Seeking SOC Analyst or Application Security role to apply offensive and defensive security skills
 
 **CompTIA Security+ Certified | Security Operations, Threat Analysis & Risk-Based Defense**
 
@@ -11,13 +9,13 @@ www.linkedin.com/in/elan-wilson-709942302
 
 ## Projects
 
-### [Project 1: Understanding And Network Monitoring With Wireshark]
-*   **Description:** Analyzed a pcap file from a simulated breach to identify malicious traffic and C2 communication.
+### [Project 1: Network Traffic Analysis]
+*   **Description:**  Analyzed packet capture from a simulated breach scenario to identify malicious communication patterns. Traced suspicious DNS queries and HTTP requests to uncover command-and-control activity. Documented the investigation process and key indicators of compromise, demonstrating how to systematically identify threats in network traffic."
 *   **Skills:** Wireshark, Protocol Analysis, Threat Hunting
 *   **Link:** https://drive.google.com/drive/folders/1UR2-IlzWthlRS9aqxHIPRy6bn4jZO2Ij?usp=sharing
 
 ### [Project 2: Vulnerability Assessment with Nessus]
-*   **Description:** Performed a vulnerability scan against a Metasploitable2 VM, identified critical flaws, and authored a remediation report.
+*   **Description:** Scanned an intentionally vulnerable system to practice enterprise vulnerability management workflow. Identified critical security gaps including outdated services and misconfigurations. Created a prioritized remediation report that categorized findings by severity and potential business impact - practicing how to communicate technical risk to decision-makers.
 *   **Skills:** Nessus, Vulnerability Management, Risk Assessment, Report Writing
 *   **Link:** https://drive.google.com/file/d/12c3b4u4cF2Wr87DqIQEPymmgAnBKInzx/view?usp=sharing
 
@@ -49,7 +47,7 @@ Security Validation: Demonstrated the efficacy of offline dictionary attacks aga
 
 ###  [Project 7: Web Application Penetration Testing Series]
 *    **Description:**
-Conducted multiple hands-on web application penetration testing projects within controlled lab environments to identify, exploit, and document common and advanced web vulnerabilities. These engagements followed structured penetration testing methodologies, emphasizing manual testing techniques over automated tooling. The projects focused on understanding real-world attack paths, validating security controls, and translating technical findings into actionable remediation guidance aligned with organizational risk.
+Conducted manual penetration tests on vulnerable web applications to understand common attack vectors. Identified and exploited authentication flaws, injection vulnerabilities, and broken access controls using manual techniques and Burp Suite. Documented findings with clear remediation guidance, demonstrating how to translate technical vulnerabilities into actionable security improvements.
 *    **Key Technical Tasks:**
 * Reconnaissance & Attack Surface Mapping:
 Performed manual and automated reconnaissance to enumerate endpoints, parameters, hidden content, and API routes using browser-based testing, Burp Suite, OWASP ZAP, and custom tooling.
