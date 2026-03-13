@@ -8,35 +8,24 @@ www.linkedin.com/in/elan-wilson-709942302
 ---
 
 ## Projects
-
-### [Project 1: Network Traffic Analysis]
-*   **Description:**  Analyzed packet capture from a simulated breach scenario to identify malicious communication patterns. Traced suspicious DNS queries and HTTP requests to uncover command-and-control activity. Documented the investigation process and key indicators of compromise, demonstrating how to systematically identify threats in network traffic."
-*   **Skills:** Wireshark, Protocol Analysis, Threat Hunting
-*   **Link:** https://drive.google.com/drive/folders/1UR2-IlzWthlRS9aqxHIPRy6bn4jZO2Ij?usp=sharing
-
-### [Project 2: Vulnerability Assessment with Nessus]
-*   **Description:** Scanned an intentionally vulnerable system to practice enterprise vulnerability management workflow. Identified critical security gaps including outdated services and misconfigurations. Created a prioritized remediation report that categorized findings by severity and potential business impact - practicing how to communicate technical risk to decision-makers.
-*   **Skills:** Nessus, Vulnerability Management, Risk Assessment, Report Writing
-*   **Link:** https://drive.google.com/file/d/12c3b4u4cF2Wr87DqIQEPymmgAnBKInzx/view?usp=sharing
-
-### [Project 3: Custom Python Port Scanner]
+### [Project 1: Custom Python Port Scanner]
 *   **Description:** Developed a custom multi-threaded network scanner in Python to identify active services and potential entry points on target hosts. Unlike linear scanners, this tool utilizes concurrent execution to probe 1,024 ports in under 10 seconds. It serves as a lightweight alternative to Nmap for rapid environment fingerprinting and custom reconnaissance tasks.
 *   **Skills:** Network Protocol Analysis: Deep understanding of the TCP/IP stack and the Three-Way Handshake (SYN, SYN-ACK, ACK).Python Programming: Mastery of socket programming, concurrency (threading), and command-line argument parsing (sys.argv).
 Reconnaissance Methodology: Practical experience in active footprinting and identifying attack surfaces.
 *   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh
 
-### [Project 4: Hardener Script & Suite-Setter For Kali]
+### [Project 2: Hardener Script & Suite-Setter For Kali]
 *   **Description:** Engineered a comprehensive automation suite to transform a default Kali Linux installation into a hardened, production-ready workstation. The solution automates the implementation of "Least Privilege" principles, network isolation via firewall orchestration, and OPSEC-focused privacy controls (MAC spoofing). By reducing manual setup time from 45 minutes to 5 minutes, this project demonstrates a commitment to DevSecOps principles and efficient security operations.
 *   **Skills:** Bash Scripting, Python 3. TCP/IP Networking, Firewall Management (UFW/Iptables), Socket Programming.
 Security Ops: OS Hardening, OPSEC (Operations Security), Automation & Scripting, Linux System Administration.
 *   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh
 
-### [Project 5: Advanced Nmap Firewall Evasion & Traffic Analysis].
+### [Project 3: Vulnerability Scanning With Nmap].
 *    **Description:** Conducted a multi-stage security research project to bypass firewall filters and IDS/IPS systems using advanced Nmap flags. Validated evasion efficacy by performing deep packet analysis in Wireshark, focusing on identity masking, packet fragmentation, and raw Ethernet frame injection.
 *    **Skills:** Network Security, Nmap, Wireshark, TCP/IP Protocol Analysis, Firewall Evasion Techniques.
 *    **Link:** https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW?usp=sharing
 
-###  [Project 6: Password Security & Hash Recovery Analysis]
+###  [Project 4: Password Security & Hash Recovery Analysis]
 *    **Description:** Conducted a hands-on technical lab in a controlled Kali Linux environment focused on the vulnerabilities of legacy encryption and weak password policies. The project involved extracting hash material from a password-protected ZIP archive and performing an offline dictionary attack to recover credentials. This research highlighted the critical gap between legacy encryption (ZipCrypto) and modern security standards.
 *    **Key Technical Tasks:**
 Hash Extraction: Utilized specialized tools to extract credential hash material from protected archives for offline analysis.
@@ -45,7 +34,7 @@ Advanced Recovery: Successfully recovered a weak password using John the Ripper,
 Security Validation: Demonstrated the efficacy of offline dictionary attacks against weak password policies and outdated encryption standards.Skills: Cybersecurity, Kali Linux, John the Ripper, Password Cracking, Hash Analysis, Encryption Standards (ZipCrypto vs. AES), Defense-in-Depth.
 *    **Link:** https://drive.google.com/drive/folders/1YK9itfcQyA1n0WOqtnM-IRA-aZJ_pyV_?usp=sharing
 
-###  [Project 7: Web Application Penetration Testing Series]
+###  [Project 5: Web Application Penetration Testing Series]
 *    **Description:**
 Conducted manual penetration tests on vulnerable web applications to understand common attack vectors. Identified and exploited authentication flaws, injection vulnerabilities, and broken access controls using manual techniques and Burp Suite. Documented findings with clear remediation guidance, demonstrating how to translate technical vulnerabilities into actionable security improvements.
 *    **Key Technical Tasks:**
