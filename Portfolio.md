@@ -21,8 +21,10 @@ Security Ops: OS Hardening, OPSEC (Operations Security), Automation & Scripting,
 *   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh
 
 ### [Project 3: Advanced Vulnerability Scanning & Security Assessment Pipeline]
+
 **Description:**
-Designed and executed a comprehensive, multi-tool vulnerability scanning pipeline simulating real-world penetration testing reconnaissance workflows. The project covered the full assessment lifecycle — from host discovery and service enumeration to web server fingerprinting and automated report generation. Leveraged multiple industry-standard tools to cross-validate findings, bypass firewall filters and IDS/IPS systems, and perform deep packet analysis to confirm evasion efficacy.
+Designed and executed a comprehensive, multi-tool vulnerability scanning pipeline simulating real-world penetration testing reconnaissance workflows. The project covered the full assessment lifecycle — from host discovery and service enumeration to web server fingerprinting and automated report generation. Leveraged multiple industry-standard tools to cross-validate findings, bypass firewall filters and IDS/IPS systems, and perform deep packet analysis to confirm evasion efficacy
+
 **Key Activities:**
 - Performed multi-stage network reconnaissance using **Nmap** with advanced flags for stealth scanning, packet fragmentation, and identity masking to evade firewall and IDS/IPS detection
 - Used **Nmap Scripting Engine (NSE)** to automate web server fingerprinting — extracting HTTP headers, server banners, and page titles
@@ -33,8 +35,10 @@ Designed and executed a comprehensive, multi-tool vulnerability scanning pipelin
 - Cross-validated results across tools to ensure accuracy and completeness of findings
 **Tools & Technologies:**
 `Nmap` `Nmap NSE` `Wireshark` `Bash/Shell Scripting` `Regex` `Python` `TCP/IP Protocol Analysis`
+
 **Skills:**
 Network Security · Vulnerability Assessment · Service Enumeration · Firewall Evasion · IDS/IPS Bypass · Packet Fragmentation · Deep Packet Analysis · Security Reporting Automation · Linux CLI
+
 **Link:** [View Project Files](https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW?usp=sharing)
 
 ###  [Project 4: Password Security & Hash Recovery Analysis]
