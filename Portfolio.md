@@ -20,10 +20,22 @@ Reconnaissance Methodology: Practical experience in active footprinting and iden
 Security Ops: OS Hardening, OPSEC (Operations Security), Automation & Scripting, Linux System Administration.
 *   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh
 
-### [Project 3: Vulnerability Scanning With Nmap].
-*    **Description:** Conducted a multi-stage security research project to bypass firewall filters and IDS/IPS systems using advanced Nmap flags. Validated evasion efficacy by performing deep packet analysis in Wireshark, focusing on identity masking, packet fragmentation, and raw Ethernet frame injection.
-*    **Skills:** Network Security, Nmap, Wireshark, TCP/IP Protocol Analysis, Firewall Evasion Techniques.
-*    **Link:** https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW?usp=sharing
+### [Project 3: Advanced Vulnerability Scanning & Security Assessment Pipeline]
+**Description:**
+Designed and executed a comprehensive, multi-tool vulnerability scanning pipeline simulating real-world penetration testing reconnaissance workflows. The project covered the full assessment lifecycle — from host discovery and service enumeration to web server fingerprinting and automated report generation. Leveraged multiple industry-standard tools to cross-validate findings, bypass firewall filters and IDS/IPS systems, and perform deep packet analysis to confirm evasion efficacy.
+**Key Activities:**
+- Performed multi-stage network reconnaissance using **Nmap** with advanced flags for stealth scanning, packet fragmentation, and identity masking to evade firewall and IDS/IPS detection
+- Used **Nmap Scripting Engine (NSE)** to automate web server fingerprinting — extracting HTTP headers, server banners, and page titles
+- Conducted service version fingerprinting (`-sV`) to map open ports to exact software versions, enabling CVE correlation
+- Parsed and extracted structured security data from Nmap's XML, Grepable, and Normal output formats using **Bash pipelines and Regex**
+- Validated packet-level evasion techniques through deep packet inspection in **Wireshark**, analyzing raw Ethernet frames and TCP/IP behavior
+- Automated the full reporting pipeline using shell scripting — aggregating scan data into a structured **security analysis report**
+- Cross-validated results across tools to ensure accuracy and completeness of findings
+**Tools & Technologies:**
+`Nmap` `Nmap NSE` `Wireshark` `Bash/Shell Scripting` `Regex` `Python` `TCP/IP Protocol Analysis`
+**Skills:**
+Network Security · Vulnerability Assessment · Service Enumeration · Firewall Evasion · IDS/IPS Bypass · Packet Fragmentation · Deep Packet Analysis · Security Reporting Automation · Linux CLI
+**Link:** [View Project Files](https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW?usp=sharing)
 
 ###  [Project 4: Password Security & Hash Recovery Analysis]
 *    **Description:** Conducted a hands-on technical lab in a controlled Kali Linux environment focused on the vulnerabilities of legacy encryption and weak password policies. The project involved extracting hash material from a password-protected ZIP archive and performing an offline dictionary attack to recover credentials. This research highlighted the critical gap between legacy encryption (ZipCrypto) and modern security standards.
