@@ -106,119 +106,134 @@ Conducted manual penetration tests on vulnerable web applications to understand 
 
 **Link:** [View on Google Drive](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
 
-## CTFs & Online Security Labs (Active Work)
+## CTFs & Online Security Labs
 
-I actively participate in Capture The Flag (CTF) challenges and structured online labs to strengthen hands-on security skills across blue team, offensive security, and threat analysis domains. These labs are approached methodically, with emphasis on understanding attack paths, validating findings, and documenting lessons learned rather than tool-driven guessing.
+I actively participate in Capture The Flag (CTF) challenges and structured online labs to strengthen hands-on security skills across blue team, offensive security, and threat analysis domains. Each lab is approached methodically — with emphasis on understanding attack paths, validating findings, and documenting lessons learned rather than tool-driven guessing.
 
 ### Platforms & Focus Areas
-* **Blue Team Labs Online (BTLO)** – Defensive security labs focused on:
-  * Log analysis & SIEM-style investigation
-  * Network traffic analysis
-  * Incident detection & triage
-  * Threat identification and reporting
-  * Email forensics
-  * File signature & metadata analysis
-  * Encoding/decoding (Base64)
-  * Artifact validation
-  * Structured investigation thinking
+
+- **CTF Competitions** — Offensive and defensive challenges covering cryptography, forensics, web exploitation, reverse engineering, and OSINT
+- **Blue Team Labs** — Defensive security labs focused on log analysis, network traffic inspection, incident detection and triage, email forensics, file metadata analysis, and structured investigation methodology
 
 ### Skills Practiced
-* Log interpretation & alert investigation  
-* Network traffic inspection (pcap analysis)  
-* Detection of malicious behavior & attack indicators  
-* Mapping technical findings to incident impact  
-* Documentation of investigative methodology  
+
+- Log interpretation & alert investigation
+- Network traffic inspection (pcap analysis)
+- Detection of malicious behaviour & attack indicators
+- Mapping technical findings to incident impact
+- Documentation of investigative methodology
 
 ### Evidence & Writeups
-Due to time efficiency and readability, individual challenge artifacts, notes, and writeups are maintained externally and updated continuously.
 
-* CTF & Lab Evidence Repository:
-https://drive.google.com/drive/folders/1YxHe2bxiZPcYbQD266mXE9W6LJp4wpLW?usp=sharing
+Challenge artifacts, notes, and writeups are maintained externally and updated continuously.
+
+**Evidence Repository:** [View on Google Drive](https://drive.google.com/drive/folders/1YxHe2bxiZPcYbQD266mXE9W6LJp4wpLW?usp=sharing)
 
 ---
 
 
 ---
 ## Certifications
-*  Advent In Cyber 2025 cert
-*  API penetration Testing
-*  API Security Fundamental
-*  API Security in the World of DevSecOps cert
-*  APIsec Power User
-*  Certified Cybersecurity Educator Professional (CCEP)
-*  Comptia Sec + syo 701
-*  Certificate Of Completion Cyber Security GomyCode
-*  MCP Security Fundamentals
-*  OWASP API Security Top 10 cert
-*  Building Security into AI
-*  API Security for PCI Compliance
-*  API Documentation Best Practices
-*  Securing API Servers
-*  API SecDevOps
-*  API Authentication Cert
-*  Securing LLM and NLP APIs
-*  Getting Started in API Pen-Testing
-*  API Gateway Security Best Practices
-*  API Product Management Masterclass
-*  Certified Threat Intelligence & Governance Analyst (CTIGA)
-*  Certified Red Team Operations Management (CRTOM)
-  
-https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing
+
+A collection of completed certifications spanning API security, penetration testing, threat intelligence, and foundational cybersecurity. Full certificate documentation is available in the repository linked below.
+
+### Foundational & General Cybersecurity
+- CompTIA Security+ (SY0-701)
+- Certificate of Completion — Cybersecurity (GoMyCode)
+- Advent in Cyber 2025
+- MCP Security Fundamentals
+- Building Security into AI
+
+### API Security
+- API Penetration Testing
+- API Security Fundamentals
+- API Security in the World of DevSecOps
+- APIsec Power User
+- OWASP API Security Top 10
+- API Security for PCI Compliance
+- API Documentation Best Practices
+- Securing API Servers
+- API SecDevOps
+- API Authentication
+- Securing LLM and NLP APIs
+- Getting Started in API Pen-Testing
+- API Gateway Security Best Practices
+- API Product Management Masterclass
+
+### Offensive Security & Threat Intelligence
+- Certified Threat Intelligence & Governance Analyst (CTIGA)
+- Certified Red Team Operations Management (CRTOM)
+
+### Education & Outreach
+- Certified Cybersecurity Educator Professional (CCEP)
+
+**Certificate Repository:** [View on Google Drive](https://drive.google.com/drive/folders/1io2daYJO_JYVX27C8rYraBT7UbtBwv4D?usp=sharing)
 
 ## Skills
 
 ### Security Operations & Investigation
-* Log analysis, alert triage, and security monitoring concepts  
-* Email security & forensics: header analysis, artifact validation, and phishing investigation  
-* File signature and metadata analysis for integrity and anomaly detection  
-* Encoding and decoding techniques (e.g., Base64) for artifact examination  
-* Structured investigative thinking and evidence-based analysis  
+- Log analysis, alert triage, and security monitoring
+- Email security & forensics: header analysis, artifact validation, and phishing investigation
+- File signature and metadata analysis for integrity and anomaly detection
+- Encoding and decoding techniques (Base64) for artifact examination
+- Structured investigative thinking and evidence-based analysis
+- Incident detection, triage, and impact assessment
 
 ### Network & Traffic Analysis
-* Network defense fundamentals and traffic inspection  
-* Packet capture (pcap) analysis using Wireshark  
-* Identification of malicious patterns, C2 indicators, and protocol abuse  
-* TCP/IP, DNS, and common service port analysis  
+- Network defense fundamentals and traffic inspection
+- Packet capture (pcap) analysis using Wireshark
+- Identification of malicious patterns, C2 indicators, and protocol abuse
+- TCP/IP stack, DNS, and service port analysis
+- Port risk classification and attack surface enumeration (65,535-port scanning)
+- Firewall management and network isolation (UFW, iptables)
 
 ### Penetration Testing & Offensive Security
-* Penetration testing methodology (Reconnaissance → Exploitation → Reporting)  
-* Attack surface mapping and manual testing techniques  
-* Web & API security testing:
-  * Authentication & authorization flaws (BOLA, BFLA)
-  * Input validation failures and injection attacks
-  * Rate-limit and logic testing  
-* Advanced network scanning and firewall evasion research  
+- Penetration testing methodology (Reconnaissance → Exploitation → Reporting)
+- Attack surface mapping and manual testing techniques
+- Web & API security testing: authentication & authorization flaws (BOLA, BFLA), input validation failures, injection attacks, rate-limit and logic testing
+- Manual payload development and proof-of-concept exploitation
+- Hash extraction and offline dictionary attacks (John the Ripper)
+- Legacy encryption analysis (ZipCrypto vs. AES)
+- Vulnerability validation and technical impact assessment
 
 ### API & Application Security
-* API security testing using Postman and curl  
-* API authentication mechanisms and secure API design awareness  
-* OWASP API Top 10 and OWASP Testing Methodology alignment  
+- API security testing using Postman and curl
+- API authentication mechanisms and secure API design awareness
+- OWASP API Top 10 and OWASP Testing Methodology alignment
+- XSS, SQL injection, command injection, and insecure parameter handling
+- Client-side and server-side security analysis
 
 ### Vulnerability & Risk Management
-* Vulnerability scanning and assessment using Nessus  
-* Identification of threats, attack vectors, and risk exposure  
-* Risk mitigation concepts and defense-in-depth awareness  
+- Vulnerability scanning and assessment using Nessus
+- Identification of threats, attack vectors, and risk exposure
+- Risk mitigation concepts and defense-in-depth awareness
+- Offline attack simulation and misconfiguration risk analysis
 
 ### Operating Systems & Platform Security
-* Linux security fundamentals and system hardening  
-* User, permission, and access auditing  
-* Security-focused automation and system configuration  
+- Linux security fundamentals and system hardening (Kali Linux)
+- OS hardening automation: least privilege, MAC spoofing, service lockdown
+- User, permission, and access auditing
+- Security-focused automation and system configuration
+- Windows and Linux firewall management (UFW, iptables, netsh)
 
 ### Tools & Technologies
-* Wireshark, Nessus, Burp Suite, Nmap, Metasploit Framework  
-* Linux CLI, VMware / VirtualBox  
+- Wireshark, Nessus, Burp Suite, OWASP ZAP, Nmap, Metasploit Framework
+- John the Ripper, curl, Postman
+- Linux CLI, VMware / VirtualBox
 
 ### Programming & Automation
-* Python (basic scripting for security tasks)  
-* Bash scripting for security automation and system hardening  
+- Python: socket programming, threading, concurrency, CLI tooling, input validation
+- Bash: security automation, system hardening, service configuration
+- Multi-threaded tool development (custom port scanner, hardening suite)
 
 ### Governance, Risk & Compliance (GRC)
-* ISO/IEC 27001 and PCI-DSS awareness  
-* Information Security Management System (ISMS) concepts  
-* Risk identification, assessment, and control validation  
+- ISO/IEC 27001 and PCI-DSS awareness
+- Information Security Management System (ISMS) concepts
+- Risk identification, assessment, and control validation
 
 ### Professional Practices
-* Security documentation and technical reporting  
-* Incident documentation and evidence handling  
-* Translating technical findings into business-relevant risk  
-* Security policies, standards, and procedural awareness  
+- Security documentation and technical report writing
+- Incident documentation and evidence handling
+- Translating technical findings into business-relevant risk
+- Security policies, standards, and procedural awareness
+- Penetration test reporting aligned to OWASP Top 10
