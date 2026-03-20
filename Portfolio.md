@@ -38,7 +38,7 @@ Engineered a comprehensive automation suite to transform a default Kali Linux in
 - **OS Hardening & OPSEC:** Practical implementation of least privilege, MAC spoofing, and operations security principles
 - **Linux System Administration:** Deep familiarity with Kali Linux internals, service management, and system-level automation
 
-**Link:** [View on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh)
+**Link:** [View on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Albion%20Harden%20Script%20For%20Linux)
 
 ### [Project 3: Advanced Vulnerability Scanning & Security Assessment Pipeline]
 
