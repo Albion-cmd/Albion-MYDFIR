@@ -8,17 +8,30 @@ www.linkedin.com/in/elan-wilson-709942302
 ---
 
 ## Projects
-### [Project 1: Custom Python Port Scanner]
-*   **Description:** Developed a custom multi-threaded network scanner in Python to identify active services and potential entry points on target hosts. Unlike linear scanners, this tool utilizes concurrent execution to probe 1,024 ports in under 10 seconds. It serves as a lightweight alternative to Nmap for rapid environment fingerprinting and custom reconnaissance tasks.
-*   **Skills:** Network Protocol Analysis: Deep understanding of the TCP/IP stack and the Three-Way Handshake (SYN, SYN-ACK, ACK).Python Programming: Mastery of socket programming, concurrency (threading), and command-line argument parsing (sys.argv).
-Reconnaissance Methodology: Practical experience in active footprinting and identifying attack surfaces.
-*   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh
+### Project 1: Custom Python Port Scanner
 
-### [Project 2: Hardener Script & Suite-Setter For Kali]
-*   **Description:** Engineered a comprehensive automation suite to transform a default Kali Linux installation into a hardened, production-ready workstation. The solution automates the implementation of "Least Privilege" principles, network isolation via firewall orchestration, and OPSEC-focused privacy controls (MAC spoofing). By reducing manual setup time from 45 minutes to 5 minutes, this project demonstrates a commitment to DevSecOps principles and efficient security operations.
-*   **Skills:** Bash Scripting, Python 3. TCP/IP Networking, Firewall Management (UFW/Iptables), Socket Programming.
-Security Ops: OS Hardening, OPSEC (Operations Security), Automation & Scripting, Linux System Administration.
-*   **Link:** https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh
+**Description:**
+Developed a custom multi-threaded network scanner in Python to identify active services and potential entry points on target hosts. Unlike linear scanners, this tool leverages concurrent execution to probe 1,024 ports in under 10 seconds — serving as a lightweight alternative to Nmap for rapid environment fingerprinting and custom reconnaissance tasks.
+
+**Skills:**
+- **Network Protocol Analysis:** Deep understanding of the TCP/IP stack and the Three-Way Handshake (SYN, SYN-ACK, ACK)
+- **Python Programming:** Proficiency in socket programming, concurrency (threading), and CLI argument parsing via `sys.argv`
+- **Reconnaissance Methodology:** Practical experience in active footprinting and attack surface identification
+
+**Link:** [View on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh)
+
+### Project 2: Hardener Script & Suite-Setter for Kali
+
+**Description:**
+Engineered a comprehensive automation suite to transform a default Kali Linux installation into a hardened, production-ready workstation. The solution automates the implementation of least privilege principles, network isolation via firewall orchestration, and OPSEC-focused privacy controls (MAC spoofing). By reducing manual setup time from 45 minutes to 5 minutes, this project demonstrates a commitment to DevSecOps principles and efficient security operations.
+
+**Skills:**
+- **Bash Scripting & Python 3:** Automation scripting across both languages for system configuration and tooling
+- **TCP/IP Networking & Firewall Management:** Hands-on experience with `UFW` and `iptables` for network isolation and traffic control
+- **OS Hardening & OPSEC:** Practical implementation of least privilege, MAC spoofing, and operations security principles
+- **Linux System Administration:** Deep familiarity with Kali Linux internals, service management, and system-level automation
+
+**Link:** [View on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Kali-Hardener%20&%20Suite-Setter.sh)
 
 ### [Project 3: Advanced Vulnerability Scanning & Security Assessment Pipeline]
 
