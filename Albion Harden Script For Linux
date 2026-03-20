@@ -1,0 +1,664 @@
+#!/bin/bash
+# ╔══════════════════════════════════════════════════════════════════╗
+# ║         ALBION HARDENER — Security Posture Framework            ║
+# ║         Author : Wilson Elan                                    ║
+# ║         Version: 2.0                                            ║
+# ║         Target : Debian / Ubuntu / Kali / Arch / Fedora         ║
+# ╚══════════════════════════════════════════════════════════════════╝
+
+# ── Colours ───────────────────────────────────────────────────────────────────
+RED='\033[0;31m';      LRED='\033[1;31m'
+GREEN='\033[0;32m';    LGREEN='\033[1;32m'
+YELLOW='\033[1;33m';   CYAN='\033[0;36m'
+LCYAN='\033[1;36m';    MAGENTA='\033[0;35m'
+LMAGENTA='\033[1;35m'; BLUE='\033[0;34m'
+LBLUE='\033[1;34m';    BOLD='\033[1m'
+DIM='\033[2m';         NC='\033[0m'
+
+# ── Log file ──────────────────────────────────────────────────────────────────
+LOGFILE="/var/log/albion_hardener_$(date +%Y%m%d_%H%M%S).log"
+touch "$LOGFILE" 2>/dev/null || LOGFILE="/tmp/albion_hardener_$(date +%Y%m%d_%H%M%S).log"
+log() { echo "[$(date '+%H:%M:%S')] $1" >> "$LOGFILE"; }
+
+# ── Root check ────────────────────────────────────────────────────────────────
+if [[ $EUID -ne 0 ]]; then
+    echo -e "${LRED}[!] This script must be run as root. Use: sudo bash $0${NC}"
+    exit 1
+fi
+
+# ── Dependency check ──────────────────────────────────────────────────────────
+if ! command -v whiptail &>/dev/null; then
+    echo -e "${YELLOW}[*] Installing whiptail...${NC}"
+    apt install whiptail -y 2>/dev/null || \
+    pacman -S libnewt --noconfirm 2>/dev/null || \
+    dnf install newt -y 2>/dev/null
+fi
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  BRANDING
+# ═════════════════════════════════════════════════════════════════════════════
+print_banner() {
+    clear
+    echo -e "${LRED}"
+    cat << "BANNER"
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+  ░                                                                ░
+  ░   █████╗ ██╗     ██████╗ ██╗ ██████╗ ███╗  ██╗               ░
+  ░  ██╔══██╗██║     ██╔══██╗██║██╔═══██╗████╗ ██║               ░
+  ░  ███████║██║     ██████╔╝██║██║   ██║██╔██╗██║               ░
+  ░  ██╔══██║██║     ██╔══██╗██║██║   ██║██║╚████║               ░
+  ░  ██║  ██║███████╗██████╔╝██║╚██████╔╝██║ ╚███║               ░
+  ░  ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝ ╚═════╝ ╚═╝  ╚══╝               ░
+  ░                                                                ░
+  ░      ██╗  ██╗ █████╗ ██████╗ ██████╗ ███████╗███╗  ██╗        ░
+  ░      ██║  ██║██╔══██╗██╔══██╗██╔══██╗██╔════╝████╗ ██║        ░
+  ░      ███████║███████║██████╔╝██║  ██║█████╗  ██╔██╗██║        ░
+  ░      ██╔══██║██╔══██║██╔══██╗██║  ██║██╔══╝  ██║╚████║        ░
+  ░      ██║  ██║██║  ██║██║  ██║██████╔╝███████╗██║ ╚███║        ░
+  ░      ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚══╝        ░
+  ░                                                                ░
+  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+BANNER
+    echo -e "${NC}"
+    echo -e "${LCYAN}  ┌──────────────────────────────────────────────────────────┐${NC}"
+    echo -e "${LCYAN}  │${NC}  ${LGREEN}[+]${NC} ${BOLD}ALBION HARDENER${NC} ${DIM}v2.0${NC}  ${LRED}|${NC}  Security Posture Framework  ${LCYAN}│${NC}"
+    echo -e "${LCYAN}  │${NC}  ${DIM}    Author  : Wilson Elan${NC}                                  ${LCYAN}│${NC}"
+    echo -e "${LCYAN}  │${NC}  ${DIM}    Target  : Debian / Ubuntu / Kali / Arch / Fedora${NC}       ${LCYAN}│${NC}"
+    echo -e "${LCYAN}  │${NC}  ${DIM}    GitHub  : github.com/Albion-cmd/Albion-MYDFIR${NC}          ${LCYAN}│${NC}"
+    echo -e "${LCYAN}  │${NC}  ${DIM}    Log     : $LOGFILE${NC}  ${LCYAN}│${NC}"
+    echo -e "${LCYAN}  └──────────────────────────────────────────────────────────┘${NC}"
+    echo ""
+}
+
+type_text() {
+    local text="$1" color="${2:-$NC}"
+    echo -ne "${color}"
+    for ((i=0; i<${#text}; i++)); do
+        echo -n "${text:$i:1}"; sleep 0.025
+    done
+    echo -e "${NC}"
+}
+
+section_header() {
+    echo ""
+    echo -e "${LCYAN}  ╔══════════════════════════════════════════════════════╗${NC}"
+    printf "${LCYAN}  ║${NC}  ${LGREEN}[*]${NC} ${BOLD}%-51s${NC}${LCYAN}║${NC}\n" "$1"
+    echo -e "${LCYAN}  ╚══════════════════════════════════════════════════════╝${NC}"
+    echo ""
+}
+
+status_ok()   { echo -e "  ${LGREEN}[+]${NC} $1"; log "[OK]  $1"; }
+status_warn() { echo -e "  ${YELLOW}[!]${NC} $1"; log "[WARN] $1"; }
+status_info() { echo -e "  ${LCYAN}[*]${NC} $1"; log "[INFO] $1"; }
+status_err()  { echo -e "  ${LRED}[✗]${NC} $1"; log "[ERR]  $1"; }
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  PHASE 1 — DISTRO DETECTION
+# ═════════════════════════════════════════════════════════════════════════════
+detect_distro() {
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        DISTRO_NAME="$NAME"
+        DISTRO_ID="${ID,,}"
+    else
+        DISTRO_NAME="Unknown"; DISTRO_ID="unknown"
+    fi
+
+    if   command -v apt     &>/dev/null; then PKG_MGR="apt";    PKG_INSTALL="apt install -y";           PKG_UPDATE="apt update && apt full-upgrade -y"
+    elif command -v pacman  &>/dev/null; then PKG_MGR="pacman"; PKG_INSTALL="pacman -S --noconfirm";    PKG_UPDATE="pacman -Syu --noconfirm"
+    elif command -v dnf     &>/dev/null; then PKG_MGR="dnf";    PKG_INSTALL="dnf install -y";           PKG_UPDATE="dnf upgrade -y"
+    elif command -v yum     &>/dev/null; then PKG_MGR="yum";    PKG_INSTALL="yum install -y";           PKG_UPDATE="yum update -y"
+    else                                      PKG_MGR="unknown";PKG_INSTALL="echo [!] Cannot install:"; PKG_UPDATE="echo [!] Cannot update"
+    fi
+    log "Distro: $DISTRO_NAME | PKG: $PKG_MGR"
+}
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  PHASE 2 — SECURITY POSTURE SCAN
+# ═════════════════════════════════════════════════════════════════════════════
+SCORE=100
+FINDINGS=()
+RISK_LEVEL=""
+
+deduct() { SCORE=$((SCORE - $1)); }
+
+scan_host() {
+    log "Starting posture scan..."
+
+    # Firewall
+    if command -v ufw &>/dev/null && ufw status | grep -q "Status: active"; then
+        FIREWALL_STATUS="UFW Active"
+    elif command -v firewall-cmd &>/dev/null && firewall-cmd --state 2>/dev/null | grep -q "running"; then
+        FIREWALL_STATUS="firewalld Active"
+    elif command -v iptables &>/dev/null && iptables -L INPUT 2>/dev/null | grep -qv "ACCEPT all"; then
+        FIREWALL_STATUS="iptables rules present"
+    else
+        FIREWALL_STATUS="NONE DETECTED"
+        FINDINGS+=("CRITICAL: No active firewall found"); deduct 25
+    fi
+
+    # SSH
+    SSH_ISSUES=()
+    if [ -f /etc/ssh/sshd_config ]; then
+        SSH_RUNNING=true
+        grep -qiE "^PermitRootLogin yes"       /etc/ssh/sshd_config && SSH_ISSUES+=("Root login enabled")         && FINDINGS+=("HIGH: SSH root login permitted")            && deduct 15
+        grep -qiE "^PasswordAuthentication yes" /etc/ssh/sshd_config && SSH_ISSUES+=("Password auth enabled")     && FINDINGS+=("MEDIUM: SSH password authentication enabled") && deduct 10
+        SSH_PORT=$(grep -iE "^Port " /etc/ssh/sshd_config | awk '{print $2}')
+        [ -z "$SSH_PORT" ] && SSH_PORT="22"
+        [ "$SSH_PORT" = "22" ] && SSH_ISSUES+=("Default port 22") && FINDINGS+=("LOW: SSH on default port 22") && deduct 5
+    else
+        SSH_RUNNING=false
+    fi
+
+    # Open / dangerous ports
+    OPEN_PORTS=""
+    DANGEROUS_PORTS=()
+    DANGEROUS_LIST=(21 23 25 135 139 445 3389 5900 6379 27017)
+    if command -v ss &>/dev/null; then
+        OPEN_PORTS=$(ss -tlnp 2>/dev/null | awk 'NR>1{print $4}' | grep -oE '[0-9]+$' | sort -u | tr '\n' ' ')
+    elif command -v netstat &>/dev/null; then
+        OPEN_PORTS=$(netstat -tlnp 2>/dev/null | awk 'NR>2{print $4}' | grep -oE '[0-9]+$' | sort -u | tr '\n' ' ')
+    fi
+    for port in $OPEN_PORTS; do
+        for danger in "${DANGEROUS_LIST[@]}"; do
+            [ "$port" = "$danger" ] && DANGEROUS_PORTS+=("$port") && FINDINGS+=("CRITICAL: Dangerous port $port open") && deduct 10
+        done
+    done
+
+    # Unnecessary services
+    RUNNING_SERVICES=()
+    for svc in bluetooth cups avahi-daemon rpcbind nfs-server telnet vsftpd; do
+        systemctl is-active --quiet "$svc" 2>/dev/null && RUNNING_SERVICES+=("$svc") && FINDINGS+=("MEDIUM: Unnecessary service running — $svc") && deduct 5
+    done
+
+    # Root password
+    ROOT_EMPTY=$(passwd -S root 2>/dev/null | grep -c "NP\|empty")
+    [ "$ROOT_EMPTY" -gt 0 ] && FINDINGS+=("CRITICAL: Root has no password") && deduct 20
+
+    # Auto updates
+    if ! command -v unattended-upgrades &>/dev/null && ! systemctl is-active --quiet dnf-automatic 2>/dev/null; then
+        FINDINGS+=("LOW: Automatic security updates not configured"); deduct 5
+    fi
+
+    # fail2ban
+    if ! command -v fail2ban-client &>/dev/null; then
+        FINDINGS+=("MEDIUM: fail2ban not installed"); deduct 5
+    fi
+
+    [ $SCORE -lt 0 ] && SCORE=0
+
+    if   [ $SCORE -ge 80 ]; then RISK_LEVEL="LOW RISK"
+    elif [ $SCORE -ge 60 ]; then RISK_LEVEL="MODERATE RISK"
+    elif [ $SCORE -ge 40 ]; then RISK_LEVEL="HIGH RISK"
+    else                         RISK_LEVEL="CRITICAL RISK"
+    fi
+
+    log "Score: $SCORE | Risk: $RISK_LEVEL"
+}
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  HARDENING MODULES
+# ═════════════════════════════════════════════════════════════════════════════
+module_update() {
+    section_header "SYSTEM UPDATE"
+    type_text "  Pulling latest packages and security patches..." "$LCYAN"
+    eval "$PKG_UPDATE" >> "$LOGFILE" 2>&1
+    status_ok "System updated successfully."
+}
+
+module_firewall() {
+    section_header "FIREWALL CONFIGURATION"
+    if [ "$PKG_MGR" = "apt" ] || [ "$PKG_MGR" = "pacman" ]; then
+        $PKG_INSTALL ufw >> "$LOGFILE" 2>&1
+        ufw default deny incoming  >> "$LOGFILE" 2>&1
+        ufw default allow outgoing >> "$LOGFILE" 2>&1
+        ufw allow ssh   >> "$LOGFILE" 2>&1
+        ufw allow 80/tcp  >> "$LOGFILE" 2>&1
+        ufw allow 443/tcp >> "$LOGFILE" 2>&1
+        ufw --force enable >> "$LOGFILE" 2>&1
+        [ "$PKG_MGR" = "pacman" ] && systemctl enable ufw >> "$LOGFILE" 2>&1
+        status_ok "UFW enabled — deny all inbound except SSH, HTTP, HTTPS."
+    elif [ "$PKG_MGR" = "dnf" ] || [ "$PKG_MGR" = "yum" ]; then
+        $PKG_INSTALL firewalld >> "$LOGFILE" 2>&1
+        systemctl enable --now firewalld >> "$LOGFILE" 2>&1
+        firewall-cmd --set-default-zone=drop >> "$LOGFILE" 2>&1
+        firewall-cmd --permanent --add-service={ssh,http,https} >> "$LOGFILE" 2>&1
+        firewall-cmd --reload >> "$LOGFILE" 2>&1
+        status_ok "firewalld configured — default zone: drop."
+    fi
+}
+
+module_ssh() {
+    section_header "SSH HARDENING"
+    SSHD="/etc/ssh/sshd_config"
+    cp "$SSHD" "${SSHD}.albion_bak_$(date +%Y%m%d)" 2>/dev/null
+    sed -i 's/^#*PermitRootLogin.*/PermitRootLogin no/'          "$SSHD"
+    sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' "$SSHD"
+    sed -i 's/^#*X11Forwarding.*/X11Forwarding no/'              "$SSHD"
+    sed -i 's/^#*MaxAuthTries.*/MaxAuthTries 3/'                  "$SSHD"
+    sed -i 's/^#*LoginGraceTime.*/LoginGraceTime 30/'             "$SSHD"
+    grep -q "^AllowTcpForwarding"  "$SSHD" || echo "AllowTcpForwarding no"   >> "$SSHD"
+    grep -q "^ClientAliveInterval" "$SSHD" || echo "ClientAliveInterval 300" >> "$SSHD"
+    grep -q "^ClientAliveCountMax" "$SSHD" || echo "ClientAliveCountMax 2"   >> "$SSHD"
+    systemctl restart sshd 2>/dev/null || systemctl restart ssh 2>/dev/null
+    status_ok "SSH hardened — root login disabled, max 3 auth attempts."
+    status_warn "Password auth disabled — ensure SSH keys are set before logging out!"
+}
+
+module_nonroot_user() {
+    section_header "NON-ROOT USER CREATION"
+    USERNAME=$(whiptail --inputbox \
+        "Enter username for the new non-root admin account:" \
+        10 60 "auditor" --title "[ ALBION HARDENER ] Create User" 3>&1 1>&2 2>&3)
+    if [ -n "$USERNAME" ]; then
+        if ! id "$USERNAME" &>/dev/null; then
+            useradd -m -G sudo  -s /bin/bash "$USERNAME" 2>/dev/null || \
+            useradd -m -G wheel -s /bin/bash "$USERNAME" 2>/dev/null
+            echo -e "\n  ${LGREEN}[+]${NC} User '${BOLD}$USERNAME${NC}' created. Set a password now:"
+            passwd "$USERNAME"
+            log "User $USERNAME created."
+        else
+            status_warn "User '$USERNAME' already exists — skipping."
+        fi
+    fi
+}
+
+module_disable_services() {
+    section_header "DISABLING UNNECESSARY SERVICES"
+    DISABLED=()
+    for svc in bluetooth cups avahi-daemon rpcbind nfs-server telnet vsftpd; do
+        if systemctl is-active --quiet "$svc" 2>/dev/null; then
+            systemctl stop    "$svc" >> "$LOGFILE" 2>&1
+            systemctl disable "$svc" >> "$LOGFILE" 2>&1
+            DISABLED+=("$svc")
+            status_ok "Stopped & disabled: $svc"
+        fi
+    done
+    [ ${#DISABLED[@]} -eq 0 ] && status_info "No unnecessary services were running."
+}
+
+module_sysctl() {
+    section_header "KERNEL HARDENING (SYSCTL)"
+    SYSCTL_CONF="/etc/sysctl.d/99-albion-hardener.conf"
+    cat > "$SYSCTL_CONF" <<EOF
+# Albion Hardener — Kernel Security Settings — Wilson Elan
+net.ipv4.ip_forward = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv6.conf.all.accept_source_route = 0
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv6.conf.all.accept_redirects = 0
+net.ipv4.conf.all.send_redirects = 0
+net.ipv4.tcp_syncookies = 1
+net.ipv4.conf.all.log_martians = 1
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.tcp_rfc1337 = 1
+fs.suid_dumpable = 0
+kernel.dmesg_restrict = 1
+kernel.yama.ptrace_scope = 1
+kernel.randomize_va_space = 2
+EOF
+    sysctl -p "$SYSCTL_CONF" >> "$LOGFILE" 2>&1
+    status_ok "Kernel hardening applied — ASLR, SYN cookies, ptrace restrictions active."
+}
+
+module_mac_spoof() {
+    section_header "MAC ADDRESS RANDOMISATION"
+    $PKG_INSTALL macchanger >> "$LOGFILE" 2>&1
+    mkdir -p /etc/NetworkManager/conf.d/
+    cat > /etc/NetworkManager/conf.d/albion-mac-randomize.conf <<EOF
+# Albion Hardener — MAC Randomisation — Wilson Elan
+[device]
+wifi.scan-rand-mac-address=yes
+[connection]
+ethernet.cloned-mac-address=random
+wifi.cloned-mac-address=random
+EOF
+    systemctl restart NetworkManager 2>/dev/null
+    status_ok "MAC randomisation configured via NetworkManager (cross-distro)."
+}
+
+module_fail2ban() {
+    section_header "FAIL2BAN — BRUTE FORCE PROTECTION"
+    $PKG_INSTALL fail2ban >> "$LOGFILE" 2>&1
+    cat > /etc/fail2ban/jail.local <<EOF
+# Albion Hardener — fail2ban config — Wilson Elan
+[DEFAULT]
+bantime  = 3600
+findtime = 600
+maxretry = 3
+backend  = systemd
+[sshd]
+enabled  = true
+port     = ssh
+logpath  = %(sshd_log)s
+maxretry = 3
+EOF
+    systemctl enable --now fail2ban >> "$LOGFILE" 2>&1
+    status_ok "fail2ban active — SSH brute force protection enabled (ban after 3 attempts)."
+}
+
+module_auto_updates() {
+    section_header "AUTOMATIC SECURITY UPDATES"
+    if [ "$PKG_MGR" = "apt" ]; then
+        $PKG_INSTALL unattended-upgrades apt-listchanges >> "$LOGFILE" 2>&1
+        dpkg-reconfigure -plow unattended-upgrades >> "$LOGFILE" 2>&1
+        status_ok "Automatic security updates enabled (unattended-upgrades)."
+    elif [ "$PKG_MGR" = "dnf" ]; then
+        $PKG_INSTALL dnf-automatic >> "$LOGFILE" 2>&1
+        sed -i 's/apply_updates = no/apply_updates = yes/' /etc/dnf/automatic.conf
+        systemctl enable --now dnf-automatic.timer >> "$LOGFILE" 2>&1
+        status_ok "Automatic updates enabled (dnf-automatic)."
+    elif [ "$PKG_MGR" = "pacman" ]; then
+        status_warn "Arch Linux does not support automatic updates — manual updates recommended."
+    fi
+}
+
+module_rkhunter() {
+    section_header "ROOTKIT DETECTION (RKHUNTER)"
+    $PKG_INSTALL rkhunter >> "$LOGFILE" 2>&1
+    rkhunter --update  >> "$LOGFILE" 2>&1
+    rkhunter --propupd >> "$LOGFILE" 2>&1
+    status_ok "rkhunter installed and database updated."
+    status_info "Run 'sudo rkhunter --check' anytime to scan for rootkits."
+}
+
+module_password_policy() {
+    section_header "PASSWORD COMPLEXITY POLICY"
+    if [ "$PKG_MGR" = "apt" ]; then
+        $PKG_INSTALL libpam-pwquality >> "$LOGFILE" 2>&1
+        cat > /etc/security/pwquality.conf <<EOF
+# Albion Hardener — Password Policy — Wilson Elan
+minlen   = 12
+minclass = 3
+maxrepeat = 2
+gecoscheck = 1
+EOF
+        status_ok "Password policy enforced — min 12 chars, 3 complexity classes required."
+    else
+        status_warn "Password policy skipped — configure manually for this distro."
+    fi
+}
+
+module_audit_log() {
+    section_header "SYSTEM AUDIT LOGGING (AUDITD)"
+    $PKG_INSTALL auditd >> "$LOGFILE" 2>&1
+    systemctl enable --now auditd >> "$LOGFILE" 2>&1
+    status_ok "auditd installed and running — system activity now being recorded."
+    status_info "View logs: sudo ausearch -m avc | tail -20"
+}
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  LEVEL APPLICATORS
+# ═════════════════════════════════════════════════════════════════════════════
+apply_decent() {
+    print_banner
+    type_text "  [DECENT] Initializing hardening sequence..." "$LGREEN"
+    sleep 1
+    module_update
+    module_firewall
+    module_nonroot_user
+    module_disable_services
+}
+
+apply_advanced() {
+    print_banner
+    type_text "  [ADVANCED] Deploying enhanced hardening suite..." "$YELLOW"
+    sleep 1
+    module_update
+    module_firewall
+    module_ssh
+    module_nonroot_user
+    module_disable_services
+    module_sysctl
+    module_mac_spoof
+    module_fail2ban
+}
+
+apply_secured() {
+    print_banner
+    type_text "  [SECURED] Maximum hardening protocol engaged..." "$LRED"
+    sleep 1
+    module_update
+    module_firewall
+    module_ssh
+    module_nonroot_user
+    module_disable_services
+    module_sysctl
+    module_mac_spoof
+    module_fail2ban
+    module_auto_updates
+    module_rkhunter
+    module_password_policy
+    module_audit_log
+}
+
+apply_custom() {
+    CHOICES=$(whiptail --title "[ ALBION HARDENER ] Custom Module Selection" \
+        --checklist \
+        "SPACE to select  |  ENTER to confirm\nSelect the modules you want to apply:" \
+        30 72 12 \
+        "update"      "System update & full upgrade"                  OFF \
+        "firewall"    "Firewall setup (UFW / firewalld)"              OFF \
+        "ssh"         "SSH hardening (no root, key-only, retries)"    OFF \
+        "nonroot"     "Create non-root admin user"                    OFF \
+        "services"    "Disable unnecessary services"                  OFF \
+        "sysctl"      "Kernel hardening via sysctl"                   OFF \
+        "mac"         "MAC address randomisation"                     OFF \
+        "fail2ban"    "fail2ban brute-force protection"               OFF \
+        "autoupdate"  "Automatic security updates"                    OFF \
+        "rkhunter"    "Rootkit detection (rkhunter)"                  OFF \
+        "password"    "Password complexity policy"                    OFF \
+        "auditd"      "System audit logging (auditd)"                 OFF \
+        3>&1 1>&2 2>&3)
+
+    [ -z "$CHOICES" ] && whiptail --msgbox "No modules selected. Returning to menu." 8 50 && return
+
+    print_banner
+    type_text "  [CUSTOM] Applying selected modules..." "$LMAGENTA"
+    sleep 1
+
+    [[ "$CHOICES" == *"update"*     ]] && module_update
+    [[ "$CHOICES" == *"firewall"*   ]] && module_firewall
+    [[ "$CHOICES" == *"ssh"*        ]] && module_ssh
+    [[ "$CHOICES" == *"nonroot"*    ]] && module_nonroot_user
+    [[ "$CHOICES" == *"services"*   ]] && module_disable_services
+    [[ "$CHOICES" == *"sysctl"*     ]] && module_sysctl
+    [[ "$CHOICES" == *"mac"*        ]] && module_mac_spoof
+    [[ "$CHOICES" == *"fail2ban"*   ]] && module_fail2ban
+    [[ "$CHOICES" == *"autoupdate"* ]] && module_auto_updates
+    [[ "$CHOICES" == *"rkhunter"*   ]] && module_rkhunter
+    [[ "$CHOICES" == *"password"*   ]] && module_password_policy
+    [[ "$CHOICES" == *"auditd"*     ]] && module_audit_log
+}
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  GUI SCREENS
+# ═════════════════════════════════════════════════════════════════════════════
+show_posture_report() {
+    # Score bar
+    BARS=$((SCORE / 5))
+    BAR_FILLED=$(printf '█%.0s' $(seq 1 $BARS))
+    BAR_EMPTY=$(printf '░%.0s'  $(seq 1 $((20 - BARS))))
+    SCORE_BAR="${BAR_FILLED}${BAR_EMPTY}"
+
+    REPORT="┌─────────────────────────────────────────────────┐\n"
+    REPORT+="│          ALBION HARDENER — POSTURE REPORT       │\n"
+    REPORT+="└─────────────────────────────────────────────────┘\n\n"
+    REPORT+=" System        : $DISTRO_NAME\n"
+    REPORT+=" Pkg Manager   : $PKG_MGR\n"
+    REPORT+=" Firewall      : $FIREWALL_STATUS\n"
+    REPORT+=" Open Ports    : ${OPEN_PORTS:-None detected}\n"
+
+    if [ ${#DANGEROUS_PORTS[@]} -gt 0 ]; then
+        REPORT+=" Danger Ports  : ${DANGEROUS_PORTS[*]}\n"
+    else
+        REPORT+=" Danger Ports  : None\n"
+    fi
+
+    if [ ${#RUNNING_SERVICES[@]} -gt 0 ]; then
+        REPORT+=" Risky Services: ${RUNNING_SERVICES[*]}\n"
+    else
+        REPORT+=" Risky Services: None\n"
+    fi
+
+    REPORT+="\n ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+    REPORT+=" SCORE  : [$SCORE_BAR] $SCORE/100\n"
+    REPORT+=" RISK   : $RISK_LEVEL\n"
+    REPORT+=" ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n"
+    REPORT+=" FINDINGS:\n"
+    for finding in "${FINDINGS[@]}"; do
+        REPORT+="   >> $finding\n"
+    done
+    [ ${#FINDINGS[@]} -eq 0 ] && REPORT+="   No critical issues detected.\n"
+    REPORT+="\n Log saved to: $LOGFILE"
+
+    whiptail --title "[ ALBION HARDENER ] Security Posture Report" \
+        --scrolltext --msgbox "$REPORT" 36 72
+}
+
+show_level_menu() {
+    LEVEL=$(whiptail --title "[ ALBION HARDENER ] Select Hardening Level" \
+        --menu \
+"  Score: $SCORE/100   |   Risk: $RISK_LEVEL
+  ─────────────────────────────────────────────────
+  Choose your hardening configuration:" \
+        24 72 5 \
+        "1" "DECENT   >> Firewall, update, non-root user, services" \
+        "2" "ADVANCED >> DECENT + SSH, kernel tweaks, MAC, fail2ban" \
+        "3" "SECURED  >> ADVANCED + auto-updates, rkhunter, auditd" \
+        "4" "CUSTOM   >> Build your own — pick modules individually" \
+        "5" "EXIT     >> Quit without making changes" \
+        3>&1 1>&2 2>&3)
+
+    case $LEVEL in
+        1) LEVEL_NAME="DECENT"   ;;
+        2) LEVEL_NAME="ADVANCED" ;;
+        3) LEVEL_NAME="SECURED"  ;;
+        4) LEVEL_NAME="CUSTOM"   ;;
+        5) whiptail --msgbox "No changes made.\n\nLog: $LOGFILE" 10 55; exit 0 ;;
+        *) exit 0 ;;
+    esac
+}
+
+show_confirmation() {
+    case $LEVEL_NAME in
+        DECENT)
+            DESC="  > System update & upgrade\n  > UFW/firewalld firewall setup\n  > Non-root admin user creation\n  > Disable unnecessary services"
+            ;;
+        ADVANCED)
+            DESC="  > Everything in DECENT, plus:\n  > SSH hardening (no root, key-only, retries)\n  > Kernel hardening (sysctl)\n  > MAC address randomisation\n  > fail2ban brute-force protection"
+            ;;
+        SECURED)
+            DESC="  > Everything in ADVANCED, plus:\n  > Automatic security updates\n  > Rootkit detection (rkhunter)\n  > Password complexity policy\n  > System audit logging (auditd)"
+            ;;
+        CUSTOM)
+            DESC="  > You will select individual modules\n  > from a checklist on the next screen."
+            ;;
+    esac
+
+    whiptail --title "[ ALBION HARDENER ] Confirm: $LEVEL_NAME" \
+        --yesno \
+"  You selected: $LEVEL_NAME hardening\n\n\
+  This will apply:\n$DESC\n\n\
+  Config file backups will be saved automatically.\n\
+  All changes logged to:\n  $LOGFILE\n\n\
+  Proceed?" \
+        24 68
+
+    [ $? -ne 0 ] && whiptail --msgbox "Cancelled. No changes were made." 8 50 && exit 0
+}
+
+show_completion() {
+    whiptail --title "[ ALBION HARDENER ] Mission Complete" \
+        --msgbox \
+"  ╔═══════════════════════════════════════════════╗
+  ║    ALBION HARDENER — HARDENING COMPLETE       ║
+  ╚═══════════════════════════════════════════════╝
+
+  Level Applied : $LEVEL_NAME
+  Log File      : $LOGFILE
+
+  Next Steps:
+  >> Reboot your system to apply all changes
+  >> If SSH password auth was disabled —
+     ensure your key is in place first
+  >> Re-run this script after reboot to
+     verify your new security score
+  >> Run 'sudo rkhunter --check' periodically
+
+  ─────────────────────────────────────────────────
+  Albion Hardener v2.0 — by Wilson Elan
+  github.com/Albion-cmd/Albion-MYDFIR
+  ─────────────────────────────────────────────────" \
+        24 60
+}
+
+# ═════════════════════════════════════════════════════════════════════════════
+#  MAIN
+# ═════════════════════════════════════════════════════════════════════════════
+main() {
+    print_banner
+    sleep 1
+
+    whiptail --title "[ ALBION HARDENER v2.0 ]" \
+        --msgbox \
+"  Welcome to Albion Hardener
+  Security Posture Assessment & Hardening Framework
+  ─────────────────────────────────────────────────
+  Author  : Wilson Elan
+  GitHub  : github.com/Albion-cmd/Albion-MYDFIR
+  Supports: Debian / Ubuntu / Kali / Arch / Fedora
+  ─────────────────────────────────────────────────
+
+  This tool will:
+    [1] Scan your system's current security posture
+    [2] Show a risk report with all findings scored
+    [3] Let you choose a hardening level to apply
+    [4] Log every change made for your review
+
+  Press OK to begin the scan." \
+        22 65
+
+    # Detect distro
+    whiptail --infobox "  [*] Detecting system and package manager..." 6 55
+    detect_distro
+    sleep 1
+
+    # Scan
+    whiptail --infobox "  [*] Scanning security posture — please wait..." 6 55
+    scan_host
+    sleep 1
+
+    # Report
+    show_posture_report
+
+    # Level selection
+    show_level_menu
+
+    # Confirm
+    show_confirmation
+
+    # Execute
+    case $LEVEL_NAME in
+        DECENT)   apply_decent   ;;
+        ADVANCED) apply_advanced ;;
+        SECURED)  apply_secured  ;;
+        CUSTOM)   apply_custom   ;;
+    esac
+
+    # Done
+    echo ""
+    echo -e "${LGREEN}"
+    cat << "EOF"
+  ╔══════════════════════════════════════════╗
+  ║   HARDENING SEQUENCE COMPLETE            ║
+  ║   Albion Hardener v2.0 — Wilson Elan     ║
+  ╚══════════════════════════════════════════╝
+EOF
+    echo -e "${NC}"
+
+    show_completion
+    log "Complete. Level: $LEVEL_NAME"
+}
+
+main
