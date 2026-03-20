@@ -19,7 +19,9 @@ Developed a multi-threaded network scanner in Python designed for Blue Team defe
 - **Defensive Security:** Practical knowledge of dangerous ports, misconfiguration risks, and OS-level remediation (UFW, systemctl, service hardening)
 - **Reconnaissance Methodology:** Practical experience in active footprinting and attack surface identification
 
-**Link:** [View on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh)
+**Resources:**
+- [View Script on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh)
+- [View Full Writeup & Usage Guide (PDF)](https://drive.google.com/file/d/1yi8Et-3uCqlh21aM-vhg3YyhIP-bHbo7/view?usp=sharing)
 
 ### Project 2: Hardener Script & Suite-Setter for Kali
 
