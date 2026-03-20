@@ -54,74 +54,54 @@ Network Security · Vulnerability Assessment · Service Enumeration · Firewall 
 
 **Link:** [View Project Files](https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW?usp=sharing)
 
-###  [Project 4: Password Security & Hash Recovery Analysis]
-*    **Description:** Conducted a hands-on technical lab in a controlled Kali Linux environment focused on the vulnerabilities of legacy encryption and weak password policies. The project involved extracting hash material from a password-protected ZIP archive and performing an offline dictionary attack to recover credentials. This research highlighted the critical gap between legacy encryption (ZipCrypto) and modern security standards.
-*    **Key Technical Tasks:**
-Hash Extraction: Utilized specialized tools to extract credential hash material from protected archives for offline analysis.
-Encryption Identification: Identified and analyzed legacy ZipCrypto encryption to determine the most effective attack vector.
-Advanced Recovery: Successfully recovered a weak password using John the Ripper, resolving wordlist compatibility and format issues during the process.
-Security Validation: Demonstrated the efficacy of offline dictionary attacks against weak password policies and outdated encryption standards.Skills: Cybersecurity, Kali Linux, John the Ripper, Password Cracking, Hash Analysis, Encryption Standards (ZipCrypto vs. AES), Defense-in-Depth.
-*    **Link:** https://drive.google.com/drive/folders/1YK9itfcQyA1n0WOqtnM-IRA-aZJ_pyV_?usp=sharing
+### Project 4: Password Security & Hash Recovery Analysis
 
-###  [Project 5: Web Application Penetration Testing Series]
-*    **Description:**
+**Description:**
+Conducted a hands-on technical lab in a controlled Kali Linux environment focused on the vulnerabilities of legacy encryption and weak password policies. The project involved extracting hash material from a password-protected ZIP archive and performing an offline dictionary attack to recover credentials — highlighting the critical gap between legacy encryption (ZipCrypto) and modern security standards.
+
+**Key Technical Tasks:**
+- **Hash Extraction:** Utilized specialized tools to extract credential hash material from protected archives for offline analysis
+- **Encryption Identification:** Identified and analyzed legacy ZipCrypto encryption to determine the most effective attack vector
+- **Advanced Recovery:** Successfully recovered a weak password using `John the Ripper`, resolving wordlist compatibility and format issues during the process
+- **Security Validation:** Demonstrated the efficacy of offline dictionary attacks against weak password policies and outdated encryption standards
+
+**Skills:**
+`Kali Linux` `John the Ripper` `Password Cracking` `Hash Analysis` `ZipCrypto vs. AES` `Defense-in-Depth`
+
+**Link:** [View on Google Drive](https://drive.google.com/drive/folders/1YK9itfcQyA1n0WOqtnM-IRA-aZJ_pyV_?usp=sharing)
+
+### Project 5: Web Application Penetration Testing Series
+
+**Description:**
 Conducted manual penetration tests on vulnerable web applications to understand common attack vectors. Identified and exploited authentication flaws, injection vulnerabilities, and broken access controls using manual techniques and Burp Suite. Documented findings with clear remediation guidance, demonstrating how to translate technical vulnerabilities into actionable security improvements.
-*    **Key Technical Tasks:**
-* Reconnaissance & Attack Surface Mapping:
-Performed manual and automated reconnaissance to enumerate endpoints, parameters, hidden content, and API routes using browser-based testing, Burp Suite, OWASP ZAP, and custom tooling.
-* Input Validation & Injection Testing:
-Identified and exploited input validation weaknesses including reflected and stored XSS, SQL injection patterns, command injection vectors, and insecure parameter handling.
-* Authentication & Authorization Testing:
-Tested login mechanisms, session management, and access controls, including broken object level authorization (BOLA), broken function level authorization (BFLA), and privilege escalation scenarios.
-* Client-Side & Server-Side Security Analysis:
-Analyzed client-side JavaScript behavior and server-side request handling to uncover trust boundary violations, insecure logic, and hidden functionality not exposed through the UI.
-* Manual Exploitation & Proof of Concept Development:
-Developed manual payloads and proofs of concept to validate vulnerabilities beyond automated scanner findings, ensuring accurate risk assessment and reducing false positives.
-* Vulnerability Validation & Impact Assessment:
-Confirmed exploitability of findings and evaluated technical and business impact, considering data exposure, account compromise, and downstream attack potential.
-* Reporting & Remediation Guidance:
-Produced structured penetration testing reports detailing findings, attack methodology, evidence, and prioritized remediation steps aligned with OWASP Top 10 and secure development best practices.
-*    **Skills Demonstrated:**
-Web Application Security, Penetration Testing Methodology, OWASP Top 10, Burp Suite, OWASP ZAP, Manual Exploitation Techniques, Authentication & Authorization Testing, XSS & Injection Attacks, Risk Assessment, Technical Reporting, Secure Design Awareness.
-*    **Link:** https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link
 
-###   [Project 8: ELK Stack Deployment & SIEM Engineering Lab]
+**Key Technical Tasks:**
 
-*    **Description:**
-Designed, deployed, and validated a fully functional Elastic Stack (Elasticsearch, Kibana, Fleet Server, and Elastic Agent) to build a centralized SIEM and observability lab in a Linux-based virtualized environment.
-The project focused on understanding how security telemetry is collected, transported, indexed, and analyzed in real-world SOC environments. Emphasis was placed on secure configuration, agent lifecycle management, data ingestion validation, and operational troubleshooting rather than one-click setups.
+- **Reconnaissance & Attack Surface Mapping:**
+  Performed manual and automated reconnaissance to enumerate endpoints, parameters, hidden content, and API routes using browser-based testing, `Burp Suite`, `OWASP ZAP`, and custom tooling.
 
-Key Technical Tasks:
-* Elastic Stack Architecture & Secure Deployment:
-Deployed Elasticsearch and Kibana on an Ubuntu server with built-in security enabled, configuring single-node discovery for lab use while maintaining production-aligned security defaults (TLS, authentication, enrollment tokens).
-* Fleet Server Configuration & Agent Management:
-Provisioned and configured Fleet Server to centrally manage Elastic Agents, enabling policy-based control of data collection and enforcing consistent telemetry ingestion across hosts.
-* Elastic Agent Installation & Enrollment:
-Installed Elastic Agent with elevated privileges to ensure full system visibility and enrolled the agent into Fleet using service tokens and trusted CA fingerprints, simulating enterprise endpoint onboarding workflows.
-* System Telemetry & Log Ingestion:
-Enabled the System integration to collect host-level telemetry including:
-Authentication logs
-Syslog events
-CPU, memory, disk, and process metrics
-* Host and agent metadata
-Validated ingestion into logs-* and metrics-* data streams.
-* Data View Creation & Validation:
-Created and configured Kibana data views (logs-*, metrics-*) and validated live ingestion through Discover, confirming correct timestamping, field mapping, and ECS alignment.
-* Operational Troubleshooting & Debugging:
-Resolved real-world deployment issues including:
-* Fleet Server HTTPS enforcement
-* Certificate trust and fingerprint validation
-* Enrollment and agent bootstrap timing issues
-* Kibana access and browser-related session constraints
-* SIEM Readiness & SOC Use-Case Preparation:
-Prepared the environment for future detection engineering, alerting, and investigation workflows by ensuring reliable data flow, normalized fields, and consistent host context.
+- **Input Validation & Injection Testing:**
+  Identified and exploited input validation weaknesses including reflected and stored XSS, SQL injection, command injection vectors, and insecure parameter handling.
 
-*    **Skills Demonstrated:**
-SIEM Architecture, Elastic Stack (ELK), Elasticsearch, Kibana, Fleet Server, Elastic Agent, Linux System Administration, Log & Metrics Pipelines, Security Telemetry Collection, TLS & Certificate Management, SOC Tooling Fundamentals, Troubleshooting Distributed Systems, Observability & Detection Readiness.
+- **Authentication & Authorization Testing:**
+  Tested login mechanisms, session management, and access controls — including Broken Object Level Authorization (BOLA), Broken Function Level Authorization (BFLA), and privilege escalation scenarios.
 
-*    **Link:**
-  https://drive.google.com/drive/folders/1RgRNgjQCI1qw9XckSWuRGwfHhX2-8xd3?usp=sharing
-   --
+- **Client-Side & Server-Side Security Analysis:**
+  Analyzed client-side JavaScript behavior and server-side request handling to uncover trust boundary violations, insecure logic, and hidden functionality not exposed through the UI.
+
+- **Manual Exploitation & Proof of Concept Development:**
+  Developed manual payloads and proofs of concept to validate vulnerabilities beyond automated scanner findings, ensuring accurate risk assessment and reducing false positives.
+
+- **Vulnerability Validation & Impact Assessment:**
+  Confirmed exploitability of findings and evaluated technical and business impact, considering data exposure, account compromise, and downstream attack potential.
+
+- **Reporting & Remediation Guidance:**
+  Produced structured penetration testing reports detailing findings, attack methodology, evidence, and prioritized remediation steps aligned with OWASP Top 10 and secure development best practices.
+
+**Skills:**
+`Web Application Security` `Penetration Testing Methodology` `OWASP Top 10` `Burp Suite` `OWASP ZAP` `Manual Exploitation` `Authentication & Authorization Testing` `XSS & Injection Attacks` `Risk Assessment` `Technical Reporting` `Secure Design Awareness`
+
+**Link:** [View on Google Drive](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
 
 ## CTFs & Online Security Labs (Active Work)
 
