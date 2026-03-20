@@ -11,11 +11,12 @@ www.linkedin.com/in/elan-wilson-709942302
 ### Project 1: Custom Python Port Scanner
 
 **Description:**
-Developed a custom multi-threaded network scanner in Python to identify active services and potential entry points on target hosts. Unlike linear scanners, this tool leverages concurrent execution to probe 1,024 ports in under 10 seconds — serving as a lightweight alternative to Nmap for rapid environment fingerprinting and custom reconnaissance tasks.
+Developed a multi-threaded network scanner in Python designed for Blue Team defensive assessments. The tool scans all 65,535 ports on a target host, identifies open services, and cross-references findings against a built-in port intelligence database — providing risk classifications (Critical, High, Medium) and actionable remediation guidance for each discovered service. Built as a lightweight, dependency-free alternative to Nmap with a focus on defender awareness rather than just enumeration.
 
 **Skills:**
 - **Network Protocol Analysis:** Deep understanding of the TCP/IP stack and the Three-Way Handshake (SYN, SYN-ACK, ACK)
-- **Python Programming:** Proficiency in socket programming, concurrency (threading), and CLI argument parsing via `sys.argv`
+- **Python Programming:** Proficiency in socket programming, concurrency (threading), thread throttling, and CLI argument parsing
+- **Defensive Security:** Practical knowledge of dangerous ports, misconfiguration risks, and OS-level remediation (UFW, systemctl, service hardening)
 - **Reconnaissance Methodology:** Practical experience in active footprinting and attack surface identification
 
 **Link:** [View on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh)
