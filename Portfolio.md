@@ -27,18 +27,47 @@ Developed a multi-threaded network scanner in Python designed for Blue Team defe
 - [View Script on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/PortScanner.sh)
 - [View Full Writeup & Usage Guide (PDF)](https://drive.google.com/file/d/1yi8Et-3uCqlh21aM-vhg3YyhIP-bHbo7/view?usp=sharing)
 
-### Project 2: Hardener Script & Suite-Setter for Kali
+### Project 2: Albion Hardener v2.0 — Multi-Distro Security Posture Framework
 
 **Description:**
-Engineered a comprehensive automation suite to transform a default Kali Linux installation into a hardened, production-ready workstation. The solution automates the implementation of least privilege principles, network isolation via firewall orchestration, and OPSEC-focused privacy controls (MAC spoofing). By reducing manual setup time from 45 minutes to 5 minutes, this project demonstrates a commitment to DevSecOps principles and efficient security operations.
+Designed and built a full security hardening framework for Linux systems, combining an automated
+posture scanner with a terminal GUI (whiptail) and four configurable hardening levels. The tool
+detects the host's distribution and package manager automatically, scores the system's security
+posture out of 100 with risk classification (Critical/High/Medium/Low), and applies targeted
+hardening modules — from basic firewall setup to kernel-level protections, brute-force defence,
+rootkit detection, and audit logging. Tested and validated on a live Debian GNU/Linux VM with
+full before/after documentation.
+
+**Key Technical Tasks:**
+- **Security Posture Scanning:** Automated assessment of firewall status, open/dangerous ports,
+unnecessary running services, SSH misconfigurations, and missing security tooling — scored and
+reported before any changes are made
+- **Multi-Distro Support:** Auto-detects Debian/Ubuntu/Kali (`apt`), Arch (`pacman`), and
+Fedora/RHEL (`dnf`) — adapts all hardening modules accordingly
+- **Hardening Levels:** Four configurable levels (Decent, Advanced, Secured, Custom) covering
+UFW/firewalld, SSH hardening, sysctl kernel tweaks, MAC randomisation, fail2ban,
+unattended-upgrades, rkhunter, PAM password policy, and auditd
+- **Terminal GUI:** Full whiptail interface with ASCII branding, colour-coded module output,
+typed text effects, and a timestamped log file of every change made
+- **Real-World Debugging:** Resolved live issues during testing including macchanger interactive
+prompt hang (fixed with DEBIAN_FRONTEND=noninteractive + timeout), SSH lockout after disabling
+password auth (resolved via VM console), and whiptail SSH terminal compatibility (TERM=xterm fix)
 
 **Skills:**
-- **Bash Scripting & Python 3:** Automation scripting across both languages for system configuration and tooling
-- **TCP/IP Networking & Firewall Management:** Hands-on experience with `UFW` and `iptables` for network isolation and traffic control
-- **OS Hardening & OPSEC:** Practical implementation of least privilege, MAC spoofing, and operations security principles
-- **Linux System Administration:** Deep familiarity with Kali Linux internals, service management, and system-level automation
+- **Bash Scripting:** Modular script architecture, error handling, cross-distro package management,
+systemd service control, sysctl kernel hardening
+- **Linux Security Hardening:** UFW, SSH config hardening, PAM password policy, fail2ban,
+rkhunter, auditd, MAC randomisation via NetworkManager
+- **Terminal GUI Development:** whiptail menus, checklists, input boxes, ASCII art branding,
+colour-coded output
+- **Debugging & Problem Solving:** Identified and resolved real issues during live VM testing,
+documented with exact commands and lessons learned
+- **Technical Documentation:** Structured writeup with before/after evidence, issue tracking,
+and skills mapping
 
-**Link:** [View on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Albion%20Harden%20Script%20For%20Linux)
+**Resources:**
+- [View Script on GitHub](https://github.com/Albion-cmd/Albion-MYDFIR/blob/main/Albion%20Harden%20Script%20For%20Linux)
+- [View Writeup & Screenshots (Google Drive)](https://drive.google.com/drive/folders/1NnNopOMlrPStI5dtPVJzw3e82feQ8kaQ?usp=sharing)
 
 ### [Project 3: Advanced Vulnerability Scanning & Security Assessment Pipeline]
 
