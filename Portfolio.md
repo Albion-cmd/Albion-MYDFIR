@@ -160,7 +160,7 @@ Deployed Suricata 8.0.4 as a Network Intrusion Detection System (IDS) on a cloud
 **Skills:**
 `Suricata IDS` `Intrusion Detection Systems` `Network Security Monitoring` `Linux (Ubuntu)` `Tailscale / WireGuard` `Microsoft Azure` `Kali Linux` `suricata-update` `Emerging Threats Ruleset` `systemd` `Network Traffic Analysis` `IDS Troubleshooting` `Blue Team Operations` `af-packet` `Threat Detection`
 
-**Link:** [View Project Files](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
+**Link:** [View Project Files](https://drive.google.com/drive/folders/1w11vS5wri9W90prcHo_QxiVt-ImDAtCD?usp=sharing)
 
 ## CTFs & Online Security Labs
 
