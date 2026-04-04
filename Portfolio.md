@@ -139,6 +139,29 @@ Conducted manual penetration tests on vulnerable web applications to understand 
 
 **Link:** [View on Google Drive](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
 
+### Project 6: Suricata IDS Deployment & Network Intrusion Detection Lab
+**Description:**
+Deployed Suricata 8.0.4 as a Network Intrusion Detection System (IDS) on a cloud-hosted Ubuntu VM (Microsoft Azure), connected to a local Kali Linux attack machine via Tailscale VPN. Configured and validated a full IDS pipeline — from rule management and interface tuning to live alert generation — while troubleshooting a real-world interface misconfiguration caused by WireGuard's traffic encapsulation behaviour.
+
+**Key Technical Tasks:**
+- **Environment Setup & Cloud-Local Lab Bridging:**
+  Configured a multi-machine lab across different networks using Tailscale (WireGuard-based mesh VPN) to establish persistent connectivity between a local Kali Linux attacker and a cloud-hosted Azure Ubuntu victim VM, assigning stable Tailscale IPs across all machines.
+- **Suricata Installation & Configuration:**
+  Installed Suricata 8.0.4 from the official OISF stable PPA on Ubuntu Noble, configured `suricata.yaml` with correct HOME_NET/EXTERNAL_NET address groups, and validated the full configuration using `suricata -T` before live deployment.
+- **Rule Management with suricata-update:**
+  Enabled and deployed the Emerging Threats Open (`et/open`) ruleset via `suricata-update`, loading 49,000+ detection signatures covering botnet C2, SSL anomalies, JA3 fingerprints, and application-layer attacks.
+- **Interface Misconfiguration Troubleshooting:**
+  Diagnosed a critical issue where Suricata produced zero logs despite running correctly — root caused to monitoring `tailscale0` instead of `eth0`. Identified that Tailscale's WireGuard encapsulation means all traffic flows through the physical NIC (`eth0`), not the virtual tunnel interface, and corrected the capture interface accordingly.
+- **Service Management & Systemd Integration:**
+  Configured Suricata as a persistent `systemd` service with auto-start on boot, verified active status, memory usage, and thread allocation via `systemctl status`.
+- **Alert Validation & Live Detection:**
+  Generated confirmed IDS alerts by curling `testmyids.org`, triggering rule SID 2100498 (`GPL ATTACK_RESPONSE id check returned root`) — classified as Potentially Bad Traffic at Priority 2 — and verified output in `fast.log`.
+
+**Skills:**
+`Suricata IDS` `Intrusion Detection Systems` `Network Security Monitoring` `Linux (Ubuntu)` `Tailscale / WireGuard` `Microsoft Azure` `Kali Linux` `suricata-update` `Emerging Threats Ruleset` `systemd` `Network Traffic Analysis` `IDS Troubleshooting` `Blue Team Operations` `af-packet` `Threat Detection`
+
+**Link:** [View Write-Up](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
+
 ## CTFs & Online Security Labs
 
 I actively participate in Capture The Flag (CTF) challenges and structured online labs to strengthen hands-on security skills across blue team, offensive security, and threat analysis domains. Each lab is approached methodically — with emphasis on understanding attack paths, validating findings, and documenting lessons learned rather than tool-driven guessing.
