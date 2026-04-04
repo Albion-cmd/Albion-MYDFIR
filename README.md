@@ -84,6 +84,8 @@ The full portfolio with writeups, evidence, and documentation for all projects i
 | Network Traffic Analysis & Threat Detection | Defensive Security | [Google Drive](https://drive.google.com/drive/folders/1UR2-IlzWthlRS9aqxHIPRy6bn4jZO2Ij) |
 | Vulnerability Assessment & Remediation | Vulnerability Management | [Google Drive](https://drive.google.com/file/d/12c3b4u4cF2Wr87DqIQEPymmgAnBKInzx/view) |
 | Advanced Nmap Firewall Evasion | Network Security Research | [Google Drive](https://drive.google.com/drive/folders/1Q_1Aq43LeYYIGs0poVp6DOm6Iglw3MGW) |
+| Suricata IDS Deployment  | Network Monitoring  | [Google Drive](https://drive.google.com/drive/folders/1w11vS5wri9W90prcHo_QxiVt-ImDAtCD?usp=drive_link) |
+
 
 ---
 
