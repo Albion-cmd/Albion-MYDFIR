@@ -137,7 +137,7 @@ Conducted manual penetration tests on vulnerable web applications to understand 
 **Skills:**
 `Web Application Security` `Penetration Testing Methodology` `OWASP Top 10` `Burp Suite` `OWASP ZAP` `Manual Exploitation` `Authentication & Authorization Testing` `XSS & Injection Attacks` `Risk Assessment` `Technical Reporting` `Secure Design Awareness`
 
-**Link:** [View on Google Drive](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
+**Link:** [View Project Files](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
 
 ### Project 6: Suricata IDS Deployment & Network Intrusion Detection Lab
 **Description:**
@@ -160,7 +160,7 @@ Deployed Suricata 8.0.4 as a Network Intrusion Detection System (IDS) on a cloud
 **Skills:**
 `Suricata IDS` `Intrusion Detection Systems` `Network Security Monitoring` `Linux (Ubuntu)` `Tailscale / WireGuard` `Microsoft Azure` `Kali Linux` `suricata-update` `Emerging Threats Ruleset` `systemd` `Network Traffic Analysis` `IDS Troubleshooting` `Blue Team Operations` `af-packet` `Threat Detection`
 
-**Link:** [View Write-Up](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
+**Link:** [View Project Files](https://drive.google.com/drive/folders/1yvdHyT7VGKNlmD0sZu334IwsddFWeUrq?usp=drive_link)
 
 ## CTFs & Online Security Labs
 
