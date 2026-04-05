@@ -162,6 +162,30 @@ Deployed Suricata 8.0.4 as a Network Intrusion Detection System (IDS) on a cloud
 
 **Link:** [View Project Files](https://drive.google.com/drive/folders/1w11vS5wri9W90prcHo_QxiVt-ImDAtCD?usp=sharing)
 
+### Project 7: Elastic Stack SIEM Integration with Suricata IDS
+
+**Description:**
+Engineered a centralized security monitoring pipeline by integrating a cloud-hosted Suricata IDS with the Elastic Stack (ELK). Built an end-to-end data telemetry path that ingests raw Suricata `eve.json` logs via Filebeat and Logstash into Elasticsearch for visualization in Kibana. This project focused on advanced log parsing, handling complex service dependencies, and deploying Fleet-managed agents for scalable security operations.
+
+**Key Technical Tasks:**
+- **Pipeline Architecture & SIEM Orchestration:**
+  Designed and implemented a multi-stage ingestion pipeline: Suricata (Traffic Capture) → Filebeat (Log Shipping) → Logstash (Transformation) → Elasticsearch (Storage). Configured security protocols including SSL/TLS verification and credential management across all stack components.
+- **Logstash Transformation & Enrichment:**
+  Developed custom Logstash configuration files (`suricata.conf`) to ingest JSON-formatted IDS logs on port 5044. Implemented structured data output to Elasticsearch, ensuring proper indexing and field mapping for effective threat hunting.
+- **Advanced Filebeat Configuration:**
+  Configured Filebeat on Ubuntu Noble to monitor Suricata’s `eve.json` output. Resolved complex namespace and output conflicts by disabling standard Elasticsearch outputs in favor of Logstash-centric shipping to prevent data duplication and service crashes.
+- **Fleet Server & Elastic Agent Deployment:**
+  Deployed a centralized Fleet Server in Azure to manage security policies and Elastic Agents. Troubleshot "Namespace Conflict" errors during agent installation by implementing manual `--force` overrides and cleaning stale container/service artifacts.
+- **Linux Service Optimization & Troubleshooting:**
+  Resolved critical permission issues where Filebeat was unable to access Suricata log directories. Applied recursive ownership fixes (`chown -R root:root`) and updated `systemd` unit files to ensure all pipeline services (Elasticsearch, Logstash, Kibana) achieved a "Running" state.
+- **Security Posture & Credential Management:**
+  Handled Elastic superuser (`elastic`) and service-specific credentialing for Logstash. Identified security risks associated with plaintext passwords in configuration files and proposed the implementation of the Logstash Keystore for production-ready secret management.
+
+**Skills:**
+`Elasticsearch` `Logstash` `Kibana (ELK)` `Filebeat` `Fleet Server` `Elastic Agent` `SIEM Integration` `Suricata IDS` `Log Ingestion & Parsing` `Azure Cloud Administration` `Linux System Hardening` `Data Telemetry` `JSON Log Analysis` `YAML Configuration` `Network Security Monitoring`
+
+**Link:** [View Project Files](https://google.com)
+
 ## CTFs & Online Security Labs
 
 I actively participate in Capture The Flag (CTF) challenges and structured online labs to strengthen hands-on security skills across blue team, offensive security, and threat analysis domains. Each lab is approached methodically — with emphasis on understanding attack paths, validating findings, and documenting lessons learned rather than tool-driven guessing.
