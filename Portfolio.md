@@ -184,7 +184,7 @@ Engineered a centralized security monitoring pipeline by integrating a cloud-hos
 **Skills:**
 `Elasticsearch` `Logstash` `Kibana (ELK)` `Filebeat` `Fleet Server` `Elastic Agent` `SIEM Integration` `Suricata IDS` `Log Ingestion & Parsing` `Azure Cloud Administration` `Linux System Hardening` `Data Telemetry` `JSON Log Analysis` `YAML Configuration` `Network Security Monitoring`
 
-**Link:** [View Project Files](https://google.com)
+**Link:** [View Project Files](https://drive.google.com/drive/folders/12c488zSjh9msNcc8s20Va2BTuWRlECeR?usp=sharing)
 
 ## CTFs & Online Security Labs
 
