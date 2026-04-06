@@ -186,6 +186,31 @@ Engineered a centralized security monitoring pipeline by integrating a cloud-hos
 
 **Link:** [View Project Files](https://drive.google.com/drive/folders/12c488zSjh9msNcc8s20Va2BTuWRlECeR?usp=sharing)
 
+### Project 8: Network Attack Detection & Reporting with Cowrie Honeypot
+
+**Description:**
+Engineered a comprehensive network security simulation by deploying an Ubuntu-based Cowrie SSH honeypot to capture, analyze, and report adversarial reconnaissance. Established a realistic attack topology using a Tailscale private VPN tunnel to connect a Kali Linux attack node (100.85.138.101) with the defender VM (100.103.10.11). This project focused on the full attack-detect-report lifecycle, involving real-time traffic capture, HASSH fingerprinting, and the production of a formal Security Incident Report (SIR).
+
+**Key Technical Tasks:**
+- **Honeypot Deployment & Environment Architecture:**
+  Configured a dual-VM architecture using Ubuntu 24 and Kali Linux, networked via a Tailscale private tunnel. Installed the Cowrie honeypot from source within a Python virtual environment, successfully binding it to port 2222 to intercept unauthorized SSH traffic and verify its "LISTEN" state via `ss -tulnp`.
+- **Adversarial Reconnaissance Simulation:**
+  Executed three distinct Nmap scans—SYN Stealth (`-sS`), Service Version Detection (`-sV`), and Aggressive OS Discovery (`-A`)—against the honeypot. Successfully deceived the attacker’s tooling by presenting a fake "OpenSSH 9.2p1 Debian" banner configured in `cowrie.cfg`, confirming the honeypot's effectiveness in masking the true environment.
+- **Network Forensics & Traffic Capture:**
+  Implemented raw packet-level evidence collection using `tcpdump` on the `tailscale0` interface, capturing 11 high-fidelity packets. Produced a `.pcap` capture file documenting TCP handshakes, SSH banner exchanges, and KEX negotiation frames for deep-dive analysis in Wireshark.
+- **Log Analysis & Tool Attribution:**
+  Interpreted structured Cowrie logs to identify three distinct attack phases: Initial Probing (06:26–06:32), Burst Scanning (06:45–06:46), and Final Confirmation (06:48). Utilized HASSH fingerprints (`e788c657d1a22971d5026526ffd2e918`) to positively attribute the activity to Nmap’s `ssh2-enum-algos` NSE script.
+- **SSH Protocol Analysis & KEX Negotiation:**
+  Evaluated the security of SSH Key Exchange (KEX) negotiations, identifying successful connections via deprecated algorithms such as `diffie-hellman-group14-sha1` with `aes128-cbc`. Documented KEX failures (Disconnect Code 3) where the attacker's cipher suite did not match the honeypot's configuration.
+- **Incident Reporting & Defensive Recommendations:**
+  Authored a formal Security Incident Report (SIR) translating technical findings into actionable business intelligence. Proposed specific remediation strategies, including disabling SSHv1 (CVE-2001-0361), enforcing modern GCM-based ciphers, and implementing `fail2ban` for automated rate-limiting to block parallel connection bursts.
+
+**Skills:**
+`Cowrie Honeypot` `Nmap` `Kali Linux` `Network Forensics (tcpdump/Wireshark)` `Tailscale VPN` `HASSH Fingerprinting` `SSH Protocol Analysis` `Log Analysis` `Incident Reporting` `Linux System Hardening` `Threat Attribution` `Reconnaissance Detection` `Network Security Monitoring`
+
+**Link:** [View Project Files](https://drive.google.com/drive/folders/1-9MKRfN3d0KdRNBhxgLYxF3nnOoU08Xn?usp=sharing)
+
+
 ## CTFs & Online Security Labs
 
 I actively participate in Capture The Flag (CTF) challenges and structured online labs to strengthen hands-on security skills across blue team, offensive security, and threat analysis domains. Each lab is approached methodically — with emphasis on understanding attack paths, validating findings, and documenting lessons learned rather than tool-driven guessing.
