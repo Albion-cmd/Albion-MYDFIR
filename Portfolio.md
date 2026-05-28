@@ -2,11 +2,11 @@
 
 **CompTIA Security+ Certified | SOC Operations · Penetration Testing · Threat Analysis · Risk-Based Defense**
 
-Self-taught security analyst with a bias toward understanding the *why* behind every attack, not just running the tools. I build custom security tooling from scratch — including a Python port scanner with built-in risk classification and remediation guidance designed for Blue Team defenders — and document every lab, finding, and methodology with the same rigour expected in a professional environment.
+I am a self-taught security analyst. I really want to understand the reasons behind every attack. I do not just want to use the tools that're available. I like to build my security tools from scratch. For example I built a Python port scanner that can help the Blue Team defenders. This tool can classify risks. Provide guidance on how to fix the problems.
 
-My work spans both sides of the kill chain: manual web and API penetration testing, hash cracking and encryption analysis, OS hardening automation, and defensive log and traffic analysis. Every project ends with a structured writeup because I believe the ability to communicate a finding clearly is just as critical as finding it.
+I work on different things. These things include testing the security of websites and APIs analyzing encryption and making the operating system more secure. I also look at logs and traffic to see if there are any problems. I like to write down everything I do and what I find. I think it is very important to be able to explain what I have found in a way.
 
-Currently breaking into the industry and actively pursuing SOC Analyst and Penetration Tester roles where I can contribute immediately, keep learning fast, and grow into a well-rounded security professional.
+I am looking for a job as a SOC Analyst or a Penetration Tester. I want to be able to start working away and keep learning new things. I want to become a security professional who knows a lot about different things. I am excited about the security field. I want to contribute to it. I am looking for a job where I can learn and grow with the company. Security is my focus and I want to work on security projects, like the Python port scanner I built for the Blue Team defenders.
 
 **LinkedIn:** [elan-wilson-709942302](https://www.linkedin.com/in/elan-wilson-709942302)
 ---
