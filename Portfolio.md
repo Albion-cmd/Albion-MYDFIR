@@ -2,7 +2,7 @@
 
 **CompTIA Security+ Certified | SOC Operations · Penetration Testing · Threat Analysis · Risk-Based Defense**
 
-Self-taught security analyst with a bias toward understanding the why behind every attack, not just running the tools. I build custom security tooling from scratch — including a Python port scanner with built-in risk classification and remediation guidance designed for Blue Team defenders — and document every lab, finding, and methodology with the same rigour expected in a professional environment.
+Self-taught security analyst with a bias toward understanding the why behind every attack, not just running the tools. I build custom security tooling from scratch including a Python port scanner with built-in risk classification and remediation guidance designed for Blue Team defenders and document every lab, finding, and methodology with the same rigour expected in a professional environment.
 
 My work spans both sides of the kill chain: manual web and API penetration testing, hash cracking and encryption analysis, OS hardening automation, and defensive log and traffic analysis. Every project ends with a structured writeup because I believe the ability to communicate a finding clearly is just as critical as finding it.
 
