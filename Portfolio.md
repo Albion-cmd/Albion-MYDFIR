@@ -162,29 +162,49 @@ Deployed Suricata 8.0.4 as a Network Intrusion Detection System (IDS) on a cloud
 
 **Link:** [View Project Files](https://drive.google.com/drive/folders/1w11vS5wri9W90prcHo_QxiVt-ImDAtCD?usp=sharing)
 
-### Project 7: Elastic Stack SIEM Integration with Suricata IDS
+## Project 7: Endpoint Detection Engineering – Wazuh SIEM + Windows Sysmon Integration
 
-**Description:**
-Engineered a centralized security monitoring pipeline by integrating a cloud-hosted Suricata IDS with the Elastic Stack (ELK). Built an end-to-end data telemetry path that ingests raw Suricata `eve.json` logs via Filebeat and Logstash into Elasticsearch for visualization in Kibana. This project focused on advanced log parsing, handling complex service dependencies, and deploying Fleet-managed agents for scalable security operations.
+### Description
 
-**Key Technical Tasks:**
-- **Pipeline Architecture & SIEM Orchestration:**
-  Designed and implemented a multi-stage ingestion pipeline: Suricata (Traffic Capture) → Filebeat (Log Shipping) → Logstash (Transformation) → Elasticsearch (Storage). Configured security protocols including SSL/TLS verification and credential management across all stack components.
-- **Logstash Transformation & Enrichment:**
-  Developed custom Logstash configuration files (`suricata.conf`) to ingest JSON-formatted IDS logs on port 5044. Implemented structured data output to Elasticsearch, ensuring proper indexing and field mapping for effective threat hunting.
-- **Advanced Filebeat Configuration:**
-  Configured Filebeat on Ubuntu Noble to monitor Suricata’s `eve.json` output. Resolved complex namespace and output conflicts by disabling standard Elasticsearch outputs in favor of Logstash-centric shipping to prevent data duplication and service crashes.
-- **Fleet Server & Elastic Agent Deployment:**
-  Deployed a centralized Fleet Server in Azure to manage security policies and Elastic Agents. Troubleshot "Namespace Conflict" errors during agent installation by implementing manual `--force` overrides and cleaning stale container/service artifacts.
-- **Linux Service Optimization & Troubleshooting:**
-  Resolved critical permission issues where Filebeat was unable to access Suricata log directories. Applied recursive ownership fixes (`chown -R root:root`) and updated `systemd` unit files to ensure all pipeline services (Elasticsearch, Logstash, Kibana) achieved a "Running" state.
-- **Security Posture & Credential Management:**
-  Handled Elastic superuser (`elastic`) and service-specific credentialing for Logstash. Identified security risks associated with plaintext passwords in configuration files and proposed the implementation of the Logstash Keystore for production-ready secret management.
+Designed and deployed an end-to-end endpoint detection engineering lab by integrating **Wazuh SIEM** with **Windows Sysmon** telemetry to validate detection capabilities against real-world attacker techniques. Built a secure cloud-connected monitoring environment using **Azure**, **Ubuntu Server**, and **Tailscale**, then simulated MITRE ATT&CK techniques to verify alert generation, investigate telemetry, and evaluate detection coverage. Produced documented findings demonstrating the complete detection lifecycle from endpoint telemetry collection to alert validation and threat analysis.
 
-**Skills:**
-`Elasticsearch` `Logstash` `Kibana (ELK)` `Filebeat` `Fleet Server` `Elastic Agent` `SIEM Integration` `Suricata IDS` `Log Ingestion & Parsing` `Azure Cloud Administration` `Linux System Hardening` `Data Telemetry` `JSON Log Analysis` `YAML Configuration` `Network Security Monitoring`
+---
 
-**Link:** [View Project Files](https://drive.google.com/drive/folders/12c488zSjh9msNcc8s20Va2BTuWRlECeR?usp=sharing)
+### Key Technical Tasks
+
+- **SIEM Deployment & Infrastructure Configuration:**  
+  Deployed and configured a cloud-hosted **Wazuh** environment consisting of the manager, indexer, dashboard, and Filebeat on an Ubuntu Server. Established secure communication between cloud infrastructure and a Windows endpoint using **Tailscale's WireGuard-based VPN**, eliminating direct Internet exposure.
+
+- **Endpoint Telemetry Engineering:**  
+  Installed and configured the **Wazuh Agent** and **Microsoft Sysmon** on a Windows 11 endpoint using a customized Sysmon configuration to collect high-value telemetry including process creation, module loading, registry activity, network connections, and file system events.
+
+- **Agent Deployment & Troubleshooting:**  
+  Successfully enrolled the Windows endpoint into the Wazuh manager, diagnosed and resolved Windows service startup issues, validated encrypted agent communication, and confirmed continuous event forwarding across multiple Windows Event Log channels.
+
+- **Detection Engineering & MITRE ATT&CK Validation:**  
+  Executed controlled attack simulations to validate Wazuh detection rules against MITRE ATT&CK techniques including **Encoded PowerShell Execution (T1059.001)**, **Scheduled Task Abuse (T1053.005)**, and suspicious executable staging activities. Verified rule accuracy, severity levels, and ATT&CK mappings.
+
+- **Threat Hunting & Log Analysis:**  
+  Investigated Sysmon-generated alerts within Wazuh, analyzed raw JSON event data, extracted indicators of compromise (IOCs), correlated endpoint telemetry, and validated detection events through the Threat Hunting interface.
+
+- **Alert Validation & Detection Assessment:**  
+  Confirmed end-to-end telemetry flow from endpoint to SIEM, evaluated detection fidelity, differentiated expected detections from potential false positives, and assessed alert severity based on attacker behavior and potential security impact.
+
+- **Detection Documentation & Continuous Improvement:**  
+  Documented deployment procedures, detection validation methodology, alert evidence, and recommended improvements including expanded ATT&CK technique coverage and custom Wazuh rule development to strengthen future detection capabilities.
+
+---
+
+### Skills
+
+`Endpoint Detection Engineering` `Wazuh SIEM` `Sysmon` `MITRE ATT&CK` `Threat Hunting` `SIEM Administration` `Windows Event Logging` `Log Analysis` `Detection Validation` `Azure` `Ubuntu Server` `PowerShell` `Tailscale` `Incident Detection` `Windows Security Monitoring` `JSON Log Analysis`
+
+---
+
+### Link
+
+**View Project Files:** [View Project Files]()
+**View Writeup:** [View Writeup]()
 
 ### Project 8: Network Attack Detection & Reporting with Cowrie Honeypot
 
