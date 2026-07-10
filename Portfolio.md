@@ -203,8 +203,8 @@ Designed and deployed an end-to-end endpoint detection engineering lab by integr
 
 ### Link
 
-**View Project Files:** [View Project Files]()
-**View Writeup:** [View Writeup]()
+**View Project Files:** [View Project Files](https://drive.google.com/drive/folders/1YuDSEYZE9plKknCRFq9rjtgRmkpKFq54?usp=sharing)
+**View Writeup:** [View Writeup](https://drive.google.com/file/d/1NALfoQK8bUskaGtWUjoyLDnZDpgMmC5g/view?usp=sharing)
 
 ### Project 8: Network Attack Detection & Reporting with Cowrie Honeypot
 
