@@ -162,49 +162,168 @@ Deployed Suricata 8.0.4 as a Network Intrusion Detection System (IDS) on a cloud
 
 **Link:** [View Project Files](https://drive.google.com/drive/folders/1w11vS5wri9W90prcHo_QxiVt-ImDAtCD?usp=sharing)
 
-## Project 7: Endpoint Detection Engineering – Wazuh SIEM + Windows Sysmon Integration
+# Project 7: Endpoint Detection Engineering – Wazuh SIEM, Sysmon & Custom Detection Rules
 
-### Description
+## Description
 
-Designed and deployed an end-to-end endpoint detection engineering lab by integrating **Wazuh SIEM** with **Windows Sysmon** telemetry to validate detection capabilities against real-world attacker techniques. Built a secure cloud-connected monitoring environment using **Azure**, **Ubuntu Server**, and **Tailscale**, then simulated MITRE ATT&CK techniques to verify alert generation, investigate telemetry, and evaluate detection coverage. Produced documented findings demonstrating the complete detection lifecycle from endpoint telemetry collection to alert validation and threat analysis.
+Designed and deployed an enterprise-style endpoint detection engineering lab by integrating **Wazuh SIEM** with **Microsoft Sysmon** to monitor Windows endpoint activity and validate security detections against real-world attacker techniques. Built a secure cloud-connected monitoring environment using **Azure**, **Ubuntu Server**, and **Tailscale**, then simulated MITRE ATT&CK techniques to verify telemetry collection, investigate alerts, and evaluate detection coverage.
 
----
-
-### Key Technical Tasks
-
-- **SIEM Deployment & Infrastructure Configuration:**  
-  Deployed and configured a cloud-hosted **Wazuh** environment consisting of the manager, indexer, dashboard, and Filebeat on an Ubuntu Server. Established secure communication between cloud infrastructure and a Windows endpoint using **Tailscale's WireGuard-based VPN**, eliminating direct Internet exposure.
-
-- **Endpoint Telemetry Engineering:**  
-  Installed and configured the **Wazuh Agent** and **Microsoft Sysmon** on a Windows 11 endpoint using a customized Sysmon configuration to collect high-value telemetry including process creation, module loading, registry activity, network connections, and file system events.
-
-- **Agent Deployment & Troubleshooting:**  
-  Successfully enrolled the Windows endpoint into the Wazuh manager, diagnosed and resolved Windows service startup issues, validated encrypted agent communication, and confirmed continuous event forwarding across multiple Windows Event Log channels.
-
-- **Detection Engineering & MITRE ATT&CK Validation:**  
-  Executed controlled attack simulations to validate Wazuh detection rules against MITRE ATT&CK techniques including **Encoded PowerShell Execution (T1059.001)**, **Scheduled Task Abuse (T1053.005)**, and suspicious executable staging activities. Verified rule accuracy, severity levels, and ATT&CK mappings.
-
-- **Threat Hunting & Log Analysis:**  
-  Investigated Sysmon-generated alerts within Wazuh, analyzed raw JSON event data, extracted indicators of compromise (IOCs), correlated endpoint telemetry, and validated detection events through the Threat Hunting interface.
-
-- **Alert Validation & Detection Assessment:**  
-  Confirmed end-to-end telemetry flow from endpoint to SIEM, evaluated detection fidelity, differentiated expected detections from potential false positives, and assessed alert severity based on attacker behavior and potential security impact.
-
-- **Detection Documentation & Continuous Improvement:**  
-  Documented deployment procedures, detection validation methodology, alert evidence, and recommended improvements including expanded ATT&CK technique coverage and custom Wazuh rule development to strengthen future detection capabilities.
+Extended Wazuh's native detection capabilities by developing and validating **custom XML detection rules**, enabling the platform to detect organization-specific behaviors such as user discovery and credential dumping attempts. Documented the complete detection lifecycle from telemetry collection and rule engineering to alert validation and threat analysis.
 
 ---
 
-### Skills
+## Key Technical Tasks
 
-`Endpoint Detection Engineering` `Wazuh SIEM` `Sysmon` `MITRE ATT&CK` `Threat Hunting` `SIEM Administration` `Windows Event Logging` `Log Analysis` `Detection Validation` `Azure` `Ubuntu Server` `PowerShell` `Tailscale` `Incident Detection` `Windows Security Monitoring` `JSON Log Analysis`
+### SIEM Deployment & Infrastructure Configuration
+
+- Deployed and configured a cloud-hosted **Wazuh** environment consisting of the Manager, Indexer, Dashboard, and Filebeat on Ubuntu Server.
+- Established encrypted communication between cloud infrastructure and a Windows endpoint using **Tailscale's WireGuard-based VPN**, eliminating direct Internet exposure.
+- Configured secure endpoint enrollment and validated continuous event ingestion.
 
 ---
 
-### Link
+### Endpoint Telemetry Engineering
 
-**View Project Files:** [View Project Files](https://drive.google.com/drive/folders/1YuDSEYZE9plKknCRFq9rjtgRmkpKFq54?usp=sharing)
-**View Writeup:** [View Writeup](https://drive.google.com/file/d/1NALfoQK8bUskaGtWUjoyLDnZDpgMmC5g/view?usp=sharing)
+- Installed and configured the **Wazuh Agent** and **Microsoft Sysmon** on a Windows 11 endpoint.
+- Implemented an enhanced Sysmon configuration to capture high-value telemetry including:
+  - Process creation
+  - Command-line execution
+  - Registry modifications
+  - Network connections
+  - File creation
+  - Module loading
+  - Image execution
+
+---
+
+### Detection Engineering & Custom Rule Development
+
+- Developed custom **Wazuh XML detection rules** to extend native detection capabilities.
+- Created custom rules using **PCRE2 regular expressions** to identify suspicious process execution and command-line activity.
+- Assigned custom rule IDs, severity levels, and detection groups to support structured alert classification.
+- Mapped custom detections to the **MITRE ATT&CK Framework** for standardized threat categorization.
+
+Example custom detections included:
+
+- User Discovery (`whoami.exe`) — **MITRE T1033**
+- Credential Dumping (Mimikatz detection) — **MITRE T1003.001**
+
+---
+
+### Detection Validation & Rule Testing
+
+- Validated custom rules using the built-in **Wazuh Ruleset Test** utility.
+- Confirmed decoder parsing, rule matching, severity assignment, and ATT&CK mapping before production deployment.
+- Executed controlled attack simulations to verify accurate alert generation.
+- Tested detection fidelity using Windows Sysmon event telemetry.
+
+---
+
+### MITRE ATT&CK Simulation
+
+Executed controlled attack simulations covering multiple ATT&CK techniques including:
+
+- Encoded PowerShell Execution (T1059.001)
+- User Discovery (T1033)
+- Scheduled Task Abuse (T1053.005)
+- Suspicious Executable Execution
+- Credential Dumping Detection (T1003.001)
+
+Validated alert generation, rule severity, ATT&CK mapping, and event correlation.
+
+---
+
+### Threat Hunting & Log Analysis
+
+- Investigated Sysmon-generated alerts within Wazuh.
+- Analyzed raw JSON event logs and extracted Indicators of Compromise (IOCs).
+- Correlated endpoint telemetry with Wazuh alerts.
+- Verified event integrity from endpoint generation through SIEM ingestion.
+- Performed alert triage using the Wazuh Threat Hunting interface.
+
+---
+
+### Detection Assessment & Continuous Improvement
+
+- Evaluated detection coverage and alert fidelity.
+- Distinguished expected detections from potential false positives.
+- Documented deployment procedures, validation methodology, and alert evidence.
+- Identified opportunities for expanding detection coverage through additional custom detection rules.
+
+---
+
+## Technologies
+
+- Wazuh SIEM
+- Microsoft Sysmon
+- Azure Virtual Machine
+- Ubuntu Server
+- Windows 11
+- Tailscale VPN
+- XML
+- PCRE2 Regular Expressions
+- PowerShell
+- JSON
+- MITRE ATT&CK Framework
+
+---
+
+## Skills
+
+`Detection Engineering`
+`Custom Detection Rules`
+`Wazuh SIEM`
+`Microsoft Sysmon`
+`Threat Hunting`
+`MITRE ATT&CK`
+`SIEM Administration`
+`Security Monitoring`
+`Endpoint Detection`
+`Windows Event Logging`
+`JSON Log Analysis`
+`PowerShell`
+`XML`
+`PCRE2`
+`Azure`
+`Ubuntu Server`
+`Tailscale`
+`Incident Detection`
+`SOC Operations`
+
+---
+
+## Evidence
+
+### Infrastructure
+
+- Cloud-hosted Wazuh Manager
+- Secure endpoint connectivity via Tailscale
+- Windows 11 endpoint with Sysmon and Wazuh Agent
+
+### Detection Engineering
+
+- Developed custom XML detection rules
+- Created PCRE2-based detection logic
+- Implemented MITRE ATT&CK mappings
+- Assigned custom severity levels and rule groups
+
+### Validation
+
+- Successfully validated custom rules using Wazuh Ruleset Test
+- Confirmed decoder parsing and rule matching
+- Verified end-to-end alert generation from Sysmon telemetry
+
+---
+
+## Links
+
+**Project Files**
+
+https://drive.google.com/drive/folders/1YuDSEYZE9plKknCRFq9rjtgRmkpKFq54?usp=sharing
+
+**Technical Write-up**
+
+https://drive.google.com/file/d/1NALfoQK8bUskaGtWUjoyLDnZDpgMmC5g/view?usp=sharing
 
 ### Project 8: Network Attack Detection & Reporting with Cowrie Honeypot
 
